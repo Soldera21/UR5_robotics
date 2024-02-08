@@ -16,12 +16,9 @@ import rospy
 import random
 import xml.etree.ElementTree as ET
 from math import pi
-from planner_pkg.msg import legoGroup
 import os
 
-#Global constants
-## ROS topic where to publish the generated positions of the legos
-pub = rospy.Publisher('lego_position', legoGroup, queue_size=10)
+# Global constants
 
 ## Path of the models to add to the scene
 models_path = os.path.dirname(os.path.abspath(__file__)) + "/models"
@@ -78,15 +75,14 @@ def spawn_model(model, pos, name=None, ref_frame='world'):
 
 
 '''! Removes the model with 'modelName' from the Gazebo scene
-@param modelName (string): name of the model to be deleted
+@param model (string): name of the model to be deleted
 
 @return bool : True if the deletion succeded
 '''
-def del_model(modelName):
+def del_model(model):
 	try:
-		del_model_prox = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
-		del_model_prox(modelName)
-
+		del_model_client = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
+		del_model_client(model)
 		return True
 	except:
 		return False

@@ -58,6 +58,10 @@ catkin_make install
 
 Now you can continue to follow locosim guide https://github.com/mfocchi/locosim#configure-environment-variables.
 
+### Components installation for vision
+
+
+
 ### Run the project
 
 Open a terminal and run:
