@@ -35,15 +35,15 @@ cd ~/ros_ws/
 Now you can clone the repository inside the ROS workspace you just created:
 
 ```
-git clone https://github.com/MarcoMorandin/robotics
+git clone https://github.com/Soldera21/UR5_robotics
 ```
 
 And move it to ~/ros_ws/src/ folder:
 
 ```
 cd ~/ros_ws/src/
-mv robotics/* .
-rmdir robotics
+mv UR5_robotics/* .
+rmdir UR5_robotics
 ```
 
 Once you have cloned it:
