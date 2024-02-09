@@ -86,8 +86,8 @@ void listen_lego_detection(ros::Rate rate) {
                     grip_amp_o = 1.2;
                 }
                 else {
-                    pos[2] = 0.885;
-                    grip_amp_c = 0.25;
+                    pos[2] = 0.8825;
+                    grip_amp_c = 0.2;
                     grip_amp_o = 0.8;
                 }
 

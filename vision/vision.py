@@ -178,22 +178,22 @@ if __name__ == '__main__':
     print('************************')
     print('Vision module ready')
     print('************************')
-    movement_sub = rospy.Subscriber('/ur5/joint_states', Float64MultiArray, callback=lambda data: isMoving=len(data))
-    while(not isMoving or num_lego != 0):
-        image_sub = rospy.Subscriber(IMAGE_SUB_TOPIC, Image, callback=receive_image, queue_size = 1)
-        loop_rate = rospy.Rate(1.)
-        print('Waiting for the image...')
-        while True:
-            loop_rate.sleep()
-            break
+    #movement_sub = rospy.Subscriber('/ur5/joint_states', Float64MultiArray, callback=lambda data: isMoving=len(data))
+    #while(not isMoving or num_lego != 0):
+    image_sub = rospy.Subscriber(IMAGE_SUB_TOPIC, Image, callback=receive_image, queue_size = 1)
+    loop_rate = rospy.Rate(1.)
+    print('Waiting for the image...')
+    while True:
+        loop_rate.sleep()
+        break
 
-        print('Image received')
+    print('Image received')
 
-        num_lego = pointCloudCallBack()
-        
-        pos_pub.publish(legoGroup('Assignement', message_list))
+    num_lego = pointCloudCallBack()
+    
+    pos_pub.publish(legoGroup('Assignement', message_list))
 
-        time.sleep(15)
+        #time.sleep(15)
 
 
     
