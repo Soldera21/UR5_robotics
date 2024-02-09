@@ -8,7 +8,6 @@
 #
 
 
-from pandas import array
 from gazebo_msgs.srv import SpawnModel, DeleteModel
 from geometry_msgs.msg import *
 from tf.transformations import quaternion_from_euler
@@ -17,6 +16,7 @@ import random
 import xml.etree.ElementTree as ET
 from math import pi
 import os
+
 
 # Global constants
 
