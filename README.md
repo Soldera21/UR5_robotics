@@ -5,6 +5,10 @@
 
 We **suggest** to follow the locosim README until this point https://github.com/mfocchi/locosim#python to setup Gazebo, Rviz and all related programs; for locosim setup then follow this README.
 
+### Components installation for vision
+
+
+
 ### Repository Setup
 ```
 mkdir -p ~/ros_ws/src
@@ -57,10 +61,6 @@ catkin_make install
 ```
 
 Now you can continue to follow locosim guide https://github.com/mfocchi/locosim#configure-environment-variables.
-
-### Components installation for vision
-
-
 
 ### Run the project
 
