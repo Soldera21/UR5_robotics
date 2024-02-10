@@ -5,9 +5,53 @@
 
 We **suggest** to follow the locosim README until this point https://github.com/mfocchi/locosim#python to setup Gazebo, Rviz and all related programs; for locosim setup then follow this README.
 
+### Components installation for training
+Run this commands to install all the required components to run the training
+```
+pip install ultralytics
+```
+
+```
+pip install pathlib
+```
+
+```
+pip install Counter
+```
+
+```
+pip install scikit-learn
+```
+
 ### Components installation for vision
+Run this commands to install all the required components to run the vision part of the project
+```
+sudo apt-get install ros-ROS_VERSION-cv-bridge
+```
 
+```
+pip3 install roslibpy
+```
 
+```
+pip install opencv-python
+```
+
+```
+pip install numpy
+```
+
+```
+pip install ultralytics
+```
+
+```
+pip install pillow
+```
+
+```
+pip install pandas
+```
 
 ### Repository Setup
 ```
