@@ -1,7 +1,7 @@
 ##
 # @file detect_area.py
 #
-# @brief Detect the area and crop the ZED image from where the model will recognize legos
+# @brief Detect the area and crop the ZED image from where the model will recognize blocks
 #
 #
 # @section module_authors Author(s)
@@ -15,14 +15,14 @@ from PIL import Image
 from params import *
 
 class DetectArea: 
-    """! Class that detect the area in wich detect legos"""
+    """! Class that detect the area in wich detect blocks"""
     def __init__(self, input_img, output_img_path):
         """! Initialization of the class"""
         self.input_img = input_img
         self.output_img_path = output_img_path
     
     def create_mask(self):
-        """! Create a mask to keep in view only the area in wich there are the legos to avoid error on detection"""
+        """! Create a mask to keep in view only the area in wich there are the blocks to avoid error on detection"""
         mask = np.zeros(self.input_img.shape[0:2], dtype=np.uint8)
         shown = np.array(TABLE)
 

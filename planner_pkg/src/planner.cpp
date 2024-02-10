@@ -88,7 +88,7 @@ void listen_lego_detection(ros::Rate rate) {
                 else {
                     pos[2] = 0.8825;
                     grip_amp_c = 0.2;
-                    grip_amp_o = 0.8;
+                    grip_amp_o = 1.2;
                 }
 
                 cout << " PICK POS: " << pos[0] << " " << pos[1] << " " << pos[2] << endl;
