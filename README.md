@@ -107,5 +107,5 @@ Now the project is running and the pieces are being placed in their positions!
 ### Video demo
 
 Here you can find a little demo of the movement of the robot:
-<img src="https://github.com/Soldera21/UR5_robotics/tree/master/img/placement_ezgif.gif">
+<img src="https://github.com/Soldera21/UR5_robotics/blob/master/img/placement_ezgif.gif">
 (This video is speeded up by 500% only to show how the trajectory looks like)
