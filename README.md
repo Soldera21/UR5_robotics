@@ -10,6 +10,7 @@ We **suggest** to follow the locosim README until this point https://github.com/
 
 
 ### Repository Setup
+
 ```
 mkdir -p ~/ros_ws/src
 ```
@@ -101,6 +102,10 @@ cd ~/ros_ws/src/vision
 python3 vision.py
 ```
 
-[\\]: # (Vision keeps running when the robot is not moving to check for new pieces.)
-
 Now the project is running and the pieces are being placed in their positions!
+
+### Video demo
+
+Here you can find a little demo of the movement of the robot:
+<img src="https://github.com/Soldera21/UR5_robotics/img/placement_ezgif.gif">
+(This video is speeded up by 500% only to show how the trajectory looks like)
