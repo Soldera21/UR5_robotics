@@ -45,15 +45,15 @@ errors = 0
 ##\endcond
 
 
-'''! Spawns the model in the given position
-@param model (string): the name of the lego model
-@param pos (struct): all the parameters for position and orientation of the lego
-@param name (string, optional): the name of the model. Defaults to None.
-@param ref_frame (string, optional): the reference frame. Defaults to 'world'
-
-@return string : confirmation of the action
-'''
 def spawn_model(model, pos, name=None, ref_frame='world'):
+	'''! Spawns the model in the given position
+	@param model (string): the name of the lego model
+	@param pos (struct): all the parameters for position and orientation of the lego
+	@param name (string, optional): the name of the model. Defaults to None.
+	@param ref_frame (string, optional): the reference frame. Defaults to 'world'
+
+	@return string : confirmation of the action
+	'''
 	global cont
 
 	if(name == None):
@@ -74,12 +74,12 @@ def spawn_model(model, pos, name=None, ref_frame='world'):
 	return spawn_model_client(model_name=name, model_xml=model_xml, initial_pose=pos, reference_frame=ref_frame)
 
 
-'''! Removes the model with 'modelName' from the Gazebo scene
-@param model (string): name of the model to be deleted
-
-@return bool : True if the deletion succeded
-'''
 def del_model(model):
+	'''! Removes the model with 'modelName' from the Gazebo scene
+	@param model (string): name of the model to be deleted
+
+	@return bool : True if the deletion succeded
+	'''
 	try:
 		del_model_client = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
 		del_model_client(model)
@@ -88,22 +88,22 @@ def del_model(model):
 		return False
 
 
-'''! Generates a random number 
-@param min (int): the minimum number
-@param max (int): the maximum number
-
-@return int : the random number generated
-'''
 def randNum(min, max):
+	'''! Generates a random number 
+	@param min (int): the minimum number
+	@param max (int): the maximum number
+
+	@return int : the random number generated
+	'''
 	num = round(random.uniform(min, max), 2)
 	return num
 
 
-'''! Generates a random position and rotation in the spawning zone
-
-@return Pose : the generated position for the brick
-'''
 def random_position():
+	'''! Generates a random position and rotation in the spawning zone
+
+	@return Pose : the generated position for the brick
+	'''
 	s = lego.split("-")
 
 	r = int(s[1][1]) * toll
@@ -131,25 +131,25 @@ def random_position():
 	return initial_pose
 
 
-'''! Changes the color of model
-@param (xml): xml of model
-@param (string): color to apply
-
-@return string: color
-'''
 def changeModelColor(model_xml, color):
+	'''! Changes the color of model
+	@param (xml): xml of model
+	@param (string): color to apply
+
+	@return string: color
+	'''
 	root = ET.XML(model_xml)
 	root.find('.//material/script/name').text = color
 	return ET.tostring(root, encoding='unicode')
 
 
-'''! This function check if there is conflict in spawn with other legos
-@param pos (array): positions of other legos
-@param lego (string): new lego
-
-@return bool : True if there is conflict
-'''
 def check_sovrapposizioni(pos, lego):
+	'''! This function check if there is conflict in spawn with other legos
+	@param pos (array): positions of other legos
+	@param lego (string): new lego
+
+	@return bool : True if there is conflict
+	'''
 	global errors
 	s = lego.split("-")
 
