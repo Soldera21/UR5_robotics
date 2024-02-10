@@ -1,0 +1,171 @@
+\doxysection{params Namespace Reference}
+\hypertarget{namespaceparams}{}\label{namespaceparams}\index{params@{params}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceparams_a81247845ec632a7c8c8191a51f7ffdcf}{BASE\+\_\+\+LINK\+\_\+\+POSITION}} = np.\+array(\mbox{[}0.\+5,0.\+35,1.\+75\mbox{]})
+\begin{DoxyCompactList}\small\item\em Base link position regarding to the origin frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespaceparams_aab44c08c45d12ca14d1ac7c148ce1be6}{BLOCK\+\_\+\+COORD\+\_\+Z}} = 0.\+875
+\begin{DoxyCompactList}\small\item\em Height of the block regarding to the origin frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceparams_ac9f5c95acbf6045c0acd616a643e6e3e}{CATEGORIES}} = 11
+\begin{DoxyCompactList}\small\item\em Number of categories of blocks. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_aa335fc82eec63b558cba9b6b1e8239ed}{IMAGE\+\_\+\+SUB\+\_\+\+TOPIC}} = \textquotesingle{}/ur5/zed\+\_\+node/left/image\+\_\+rect\+\_\+color\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic from where the script get the ZED image. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespaceparams_a47fc5f7d24384e2a2634923bf22a8f14}{MIN\+\_\+\+LEVEL\+\_\+\+CONFIDENCE}} = 0.\+3
+\begin{DoxyCompactList}\small\item\em Level of confidence of the Yolo model to keep the assigned labels. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_abc7c33c1e8a2bca2b98cf1c214b83ba3}{NODE\+\_\+\+NAME}} = \textquotesingle{}vision\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS nodes name. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a0d2fa0bce2b121981c166302a16c195f}{POINTCLOUD\+\_\+\+SUB\+\_\+\+TOPIC}} = \textquotesingle{}/ur5/zed\+\_\+node/point\+\_\+cloud/cloud\+\_\+registered\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic from where the script get the pointcloud. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a5992b09f0f1b706370b615e7d8cfda6b}{PUB\+\_\+\+TOPIC}} = \textquotesingle{}lego\+\_\+position\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic where to publish positions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceparams_a704be5705ab4b971728ff03dd17e79e9}{RY}}
+\begin{DoxyCompactList}\small\item\em Rotation matrix of the ZED camera. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceparams_af707c2e89f99f7d2ba615a37f8e174a8}{TABLE}} = \mbox{[}\mbox{[}825,549\mbox{]}, \mbox{[}1301,552\mbox{]}, \mbox{[}1570,913\mbox{]}, \mbox{[}658, 921\mbox{]}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Area where the vision detect blocks. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a389048ec3a4b0e520fdde087872b58ee}{ZED\+\_\+\+IMG\+\_\+\+CROPPED\+\_\+\+PATH}} = os.\+getcwd() + \textquotesingle{}/cropped\+\_\+zed\+\_\+image.\+png\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Path where the cropped image is saved (a mask is applied to the photo to reduce confusion) \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_aded3eabd628f6698bc26c9166751d348}{ZED\+\_\+\+IMG\+\_\+\+PATH}} = os.\+getcwd() + \textquotesingle{}/zed\+\_\+image.\+png\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Path where the original ZED image is saved. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceparams_a17f1d9348cd4bdeffa6d89cf53ad0642}{ZED\+\_\+\+POSITION}} = np.\+array(\mbox{[}-\/0.\+9 ,0.\+24 ,-\/0.\+35\mbox{]})
+\begin{DoxyCompactList}\small\item\em Zed position regarding to the base link frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceparams_a81247845ec632a7c8c8191a51f7ffdcf}\label{namespaceparams_a81247845ec632a7c8c8191a51f7ffdcf} 
+\index{params@{params}!BASE\_LINK\_POSITION@{BASE\_LINK\_POSITION}}
+\index{BASE\_LINK\_POSITION@{BASE\_LINK\_POSITION}!params@{params}}
+\doxysubsubsection{\texorpdfstring{BASE\_LINK\_POSITION}{BASE\_LINK\_POSITION}}
+{\footnotesize\ttfamily BASE\+\_\+\+LINK\+\_\+\+POSITION = np.\+array(\mbox{[}0.\+5,0.\+35,1.\+75\mbox{]})}
+
+
+
+Base link position regarding to the origin frame. 
+
+\Hypertarget{namespaceparams_aab44c08c45d12ca14d1ac7c148ce1be6}\label{namespaceparams_aab44c08c45d12ca14d1ac7c148ce1be6} 
+\index{params@{params}!BLOCK\_COORD\_Z@{BLOCK\_COORD\_Z}}
+\index{BLOCK\_COORD\_Z@{BLOCK\_COORD\_Z}!params@{params}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_COORD\_Z}{BLOCK\_COORD\_Z}}
+{\footnotesize\ttfamily float BLOCK\+\_\+\+COORD\+\_\+Z = 0.\+875}
+
+
+
+Height of the block regarding to the origin frame. 
+
+\Hypertarget{namespaceparams_ac9f5c95acbf6045c0acd616a643e6e3e}\label{namespaceparams_ac9f5c95acbf6045c0acd616a643e6e3e} 
+\index{params@{params}!CATEGORIES@{CATEGORIES}}
+\index{CATEGORIES@{CATEGORIES}!params@{params}}
+\doxysubsubsection{\texorpdfstring{CATEGORIES}{CATEGORIES}}
+{\footnotesize\ttfamily int CATEGORIES = 11}
+
+
+
+Number of categories of blocks. 
+
+\Hypertarget{namespaceparams_aa335fc82eec63b558cba9b6b1e8239ed}\label{namespaceparams_aa335fc82eec63b558cba9b6b1e8239ed} 
+\index{params@{params}!IMAGE\_SUB\_TOPIC@{IMAGE\_SUB\_TOPIC}}
+\index{IMAGE\_SUB\_TOPIC@{IMAGE\_SUB\_TOPIC}!params@{params}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_SUB\_TOPIC}{IMAGE\_SUB\_TOPIC}}
+{\footnotesize\ttfamily str IMAGE\+\_\+\+SUB\+\_\+\+TOPIC = \textquotesingle{}/ur5/zed\+\_\+node/left/image\+\_\+rect\+\_\+color\textquotesingle{}}
+
+
+
+ROS topic from where the script get the ZED image. 
+
+\Hypertarget{namespaceparams_a47fc5f7d24384e2a2634923bf22a8f14}\label{namespaceparams_a47fc5f7d24384e2a2634923bf22a8f14} 
+\index{params@{params}!MIN\_LEVEL\_CONFIDENCE@{MIN\_LEVEL\_CONFIDENCE}}
+\index{MIN\_LEVEL\_CONFIDENCE@{MIN\_LEVEL\_CONFIDENCE}!params@{params}}
+\doxysubsubsection{\texorpdfstring{MIN\_LEVEL\_CONFIDENCE}{MIN\_LEVEL\_CONFIDENCE}}
+{\footnotesize\ttfamily float MIN\+\_\+\+LEVEL\+\_\+\+CONFIDENCE = 0.\+3}
+
+
+
+Level of confidence of the Yolo model to keep the assigned labels. 
+
+\Hypertarget{namespaceparams_abc7c33c1e8a2bca2b98cf1c214b83ba3}\label{namespaceparams_abc7c33c1e8a2bca2b98cf1c214b83ba3} 
+\index{params@{params}!NODE\_NAME@{NODE\_NAME}}
+\index{NODE\_NAME@{NODE\_NAME}!params@{params}}
+\doxysubsubsection{\texorpdfstring{NODE\_NAME}{NODE\_NAME}}
+{\footnotesize\ttfamily str NODE\+\_\+\+NAME = \textquotesingle{}vision\textquotesingle{}}
+
+
+
+ROS nodes name. 
+
+\Hypertarget{namespaceparams_a0d2fa0bce2b121981c166302a16c195f}\label{namespaceparams_a0d2fa0bce2b121981c166302a16c195f} 
+\index{params@{params}!POINTCLOUD\_SUB\_TOPIC@{POINTCLOUD\_SUB\_TOPIC}}
+\index{POINTCLOUD\_SUB\_TOPIC@{POINTCLOUD\_SUB\_TOPIC}!params@{params}}
+\doxysubsubsection{\texorpdfstring{POINTCLOUD\_SUB\_TOPIC}{POINTCLOUD\_SUB\_TOPIC}}
+{\footnotesize\ttfamily str POINTCLOUD\+\_\+\+SUB\+\_\+\+TOPIC = \textquotesingle{}/ur5/zed\+\_\+node/point\+\_\+cloud/cloud\+\_\+registered\textquotesingle{}}
+
+
+
+ROS topic from where the script get the pointcloud. 
+
+\Hypertarget{namespaceparams_a5992b09f0f1b706370b615e7d8cfda6b}\label{namespaceparams_a5992b09f0f1b706370b615e7d8cfda6b} 
+\index{params@{params}!PUB\_TOPIC@{PUB\_TOPIC}}
+\index{PUB\_TOPIC@{PUB\_TOPIC}!params@{params}}
+\doxysubsubsection{\texorpdfstring{PUB\_TOPIC}{PUB\_TOPIC}}
+{\footnotesize\ttfamily str PUB\+\_\+\+TOPIC = \textquotesingle{}lego\+\_\+position\textquotesingle{}}
+
+
+
+ROS topic where to publish positions. 
+
+\Hypertarget{namespaceparams_a704be5705ab4b971728ff03dd17e79e9}\label{namespaceparams_a704be5705ab4b971728ff03dd17e79e9} 
+\index{params@{params}!RY@{RY}}
+\index{RY@{RY}!params@{params}}
+\doxysubsubsection{\texorpdfstring{RY}{RY}}
+{\footnotesize\ttfamily RY}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ np.matrix([[\ 0.\ \ \ \ \ ,\ -\/0.49948,\ \ 0.86632],}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [-\/1.\ \ \ \ \ ,\ \ 0.\ \ \ \ \ ,\ \ 0.\ \ \ \ \ ],}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [-\/0.\ \ \ \ \ ,\ -\/0.86632,\ -\/0.49948]])}
+
+\end{DoxyCode}
+
+
+Rotation matrix of the ZED camera. 
+
+\Hypertarget{namespaceparams_af707c2e89f99f7d2ba615a37f8e174a8}\label{namespaceparams_af707c2e89f99f7d2ba615a37f8e174a8} 
+\index{params@{params}!TABLE@{TABLE}}
+\index{TABLE@{TABLE}!params@{params}}
+\doxysubsubsection{\texorpdfstring{TABLE}{TABLE}}
+{\footnotesize\ttfamily list TABLE = \mbox{[}\mbox{[}825,549\mbox{]}, \mbox{[}1301,552\mbox{]}, \mbox{[}1570,913\mbox{]}, \mbox{[}658, 921\mbox{]}\mbox{]}}
+
+
+
+Area where the vision detect blocks. 
+
+\Hypertarget{namespaceparams_a389048ec3a4b0e520fdde087872b58ee}\label{namespaceparams_a389048ec3a4b0e520fdde087872b58ee} 
+\index{params@{params}!ZED\_IMG\_CROPPED\_PATH@{ZED\_IMG\_CROPPED\_PATH}}
+\index{ZED\_IMG\_CROPPED\_PATH@{ZED\_IMG\_CROPPED\_PATH}!params@{params}}
+\doxysubsubsection{\texorpdfstring{ZED\_IMG\_CROPPED\_PATH}{ZED\_IMG\_CROPPED\_PATH}}
+{\footnotesize\ttfamily str ZED\+\_\+\+IMG\+\_\+\+CROPPED\+\_\+\+PATH = os.\+getcwd() + \textquotesingle{}/cropped\+\_\+zed\+\_\+image.\+png\textquotesingle{}}
+
+
+
+Path where the cropped image is saved (a mask is applied to the photo to reduce confusion) 
+
+\Hypertarget{namespaceparams_aded3eabd628f6698bc26c9166751d348}\label{namespaceparams_aded3eabd628f6698bc26c9166751d348} 
+\index{params@{params}!ZED\_IMG\_PATH@{ZED\_IMG\_PATH}}
+\index{ZED\_IMG\_PATH@{ZED\_IMG\_PATH}!params@{params}}
+\doxysubsubsection{\texorpdfstring{ZED\_IMG\_PATH}{ZED\_IMG\_PATH}}
+{\footnotesize\ttfamily str ZED\+\_\+\+IMG\+\_\+\+PATH = os.\+getcwd() + \textquotesingle{}/zed\+\_\+image.\+png\textquotesingle{}}
+
+
+
+Path where the original ZED image is saved. 
+
+\Hypertarget{namespaceparams_a17f1d9348cd4bdeffa6d89cf53ad0642}\label{namespaceparams_a17f1d9348cd4bdeffa6d89cf53ad0642} 
+\index{params@{params}!ZED\_POSITION@{ZED\_POSITION}}
+\index{ZED\_POSITION@{ZED\_POSITION}!params@{params}}
+\doxysubsubsection{\texorpdfstring{ZED\_POSITION}{ZED\_POSITION}}
+{\footnotesize\ttfamily ZED\+\_\+\+POSITION = np.\+array(\mbox{[}-\/0.\+9 ,0.\+24 ,-\/0.\+35\mbox{]})}
+
+
+
+Zed position regarding to the base link frame. 
+

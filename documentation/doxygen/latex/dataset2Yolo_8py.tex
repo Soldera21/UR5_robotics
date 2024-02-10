@@ -1,0 +1,38 @@
+\doxysection{utils/dataset\+\_\+creation/dataset2\+Yolo.py File Reference}
+\hypertarget{dataset2Yolo_8py}{}\label{dataset2Yolo_8py}\index{utils/dataset\_creation/dataset2Yolo.py@{utils/dataset\_creation/dataset2Yolo.py}}
+
+
+Convert the given dataset to a Yolo format dataset.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedataset2Yolo}{dataset2\+Yolo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedataset2Yolo_a75de1d5ce972442faa70abd14ed5335a}{create\+\_\+annotations}} ()
+\begin{DoxyCompactList}\small\item\em This function creates annotations in .txt format for each image and saves it in /labels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedataset2Yolo_ad4a3dd19134e296499fe3a5ec1f04afa}{create\+\_\+yaml\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em This function is used to create the yaml file required from YOLO format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacedataset2Yolo_a9fcc21f7739ad66025cf7f28c1145197}{ASSIGNS}} = \mbox{[}\textquotesingle{}assign1\textquotesingle{}, \textquotesingle{}assign2\textquotesingle{}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Name of the folder that contains the given dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedataset2Yolo_a40c884722fcc789b7432554d506cb099}{CATEGORIES}} = json.\+load(file)
+\begin{DoxyCompactList}\small\item\em List of all categories in the dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedataset2Yolo_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} = os.\+getcwd()
+\begin{DoxyCompactList}\small\item\em Script working directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Convert the given dataset to a Yolo format dataset. 
+
+\hypertarget{vision_8py_module_authors}{}\doxysubsection{\texorpdfstring{Author(s)}{Author(s)}}\label{vision_8py_module_authors}
+
+\begin{DoxyItemize}
+\item Created by Marco Morandin 
+\end{DoxyItemize}

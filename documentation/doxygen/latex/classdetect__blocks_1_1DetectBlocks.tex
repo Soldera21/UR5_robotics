@@ -1,0 +1,91 @@
+\doxysection{Detect\+Blocks Class Reference}
+\hypertarget{classdetect__blocks_1_1DetectBlocks}{}\label{classdetect__blocks_1_1DetectBlocks}\index{DetectBlocks@{DetectBlocks}}
+
+
+Class that detect blocks.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_ae18d9315ce570f1ba7293a6d8240ee8e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_a57740f38e760975441a4d8fac1888f2b}{zed\+\_\+img}})
+\begin{DoxyCompactList}\small\item\em Initializing the model, detect the area and create a mask to improve the recognition of the blocks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_a41a4b6be0eb269ac099477f215815de0}{find\+\_\+blocks}} (self)
+\begin{DoxyCompactList}\small\item\em Detect blocks in the image using YOLOv8 model, save the result of the detection in the runs folder and print the result of the detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_a812d6b7f43a582bec81c201334c7f011}{blocks}}
+\item 
+\mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_a508cc3106d2c29fe07dc87cbe3ea6927}{model}}
+\item 
+\mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_a57740f38e760975441a4d8fac1888f2b}{zed\+\_\+img}}
+\item 
+\mbox{\hyperlink{classdetect__blocks_1_1DetectBlocks_addf25851f3ebb888bcef03e6c02837da}{zed\+\_\+img\+\_\+cropped}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that detect blocks. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_ae18d9315ce570f1ba7293a6d8240ee8e}\label{classdetect__blocks_1_1DetectBlocks_ae18d9315ce570f1ba7293a6d8240ee8e} 
+\index{DetectBlocks@{DetectBlocks}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None \+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{zed\+\_\+img }\end{DoxyParamCaption})}
+
+
+
+Initializing the model, detect the area and create a mask to improve the recognition of the blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & image in wich there are the block to recognize \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_a41a4b6be0eb269ac099477f215815de0}\label{classdetect__blocks_1_1DetectBlocks_a41a4b6be0eb269ac099477f215815de0} 
+\index{DetectBlocks@{DetectBlocks}!find\_blocks@{find\_blocks}}
+\index{find\_blocks@{find\_blocks}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{find\_blocks()}{find\_blocks()}}
+{\footnotesize\ttfamily find\+\_\+blocks (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Detect blocks in the image using YOLOv8 model, save the result of the detection in the runs folder and print the result of the detection. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_a812d6b7f43a582bec81c201334c7f011}\label{classdetect__blocks_1_1DetectBlocks_a812d6b7f43a582bec81c201334c7f011} 
+\index{DetectBlocks@{DetectBlocks}!blocks@{blocks}}
+\index{blocks@{blocks}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{blocks}{blocks}}
+{\footnotesize\ttfamily blocks}
+
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_a508cc3106d2c29fe07dc87cbe3ea6927}\label{classdetect__blocks_1_1DetectBlocks_a508cc3106d2c29fe07dc87cbe3ea6927} 
+\index{DetectBlocks@{DetectBlocks}!model@{model}}
+\index{model@{model}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily model}
+
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_a57740f38e760975441a4d8fac1888f2b}\label{classdetect__blocks_1_1DetectBlocks_a57740f38e760975441a4d8fac1888f2b} 
+\index{DetectBlocks@{DetectBlocks}!zed\_img@{zed\_img}}
+\index{zed\_img@{zed\_img}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{zed\_img}{zed\_img}}
+{\footnotesize\ttfamily zed\+\_\+img}
+
+\Hypertarget{classdetect__blocks_1_1DetectBlocks_addf25851f3ebb888bcef03e6c02837da}\label{classdetect__blocks_1_1DetectBlocks_addf25851f3ebb888bcef03e6c02837da} 
+\index{DetectBlocks@{DetectBlocks}!zed\_img\_cropped@{zed\_img\_cropped}}
+\index{zed\_img\_cropped@{zed\_img\_cropped}!DetectBlocks@{DetectBlocks}}
+\doxysubsubsection{\texorpdfstring{zed\_img\_cropped}{zed\_img\_cropped}}
+{\footnotesize\ttfamily zed\+\_\+img\+\_\+cropped}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vision/\mbox{\hyperlink{detect__blocks_8py}{detect\+\_\+blocks.\+py}}\end{DoxyCompactItemize}

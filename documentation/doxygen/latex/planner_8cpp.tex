@@ -1,0 +1,236 @@
+\doxysection{planner\+\_\+pkg/src/planner.cpp File Reference}
+\hypertarget{planner_8cpp}{}\label{planner_8cpp}\index{planner\_pkg/src/planner.cpp@{planner\_pkg/src/planner.cpp}}
+
+
+Main function and planning of the movement based on the messages received from the vision; also getters and setters for joints are present.  
+
+
+{\ttfamily \#include "{}planner\+\_\+pkg/planner.\+h"{}}\newline
+Include dependency graph for planner.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{planner_8cpp_a7f61eba62a3661bcd27f0af694fb346c}{close\+\_\+gripper}} (float amp)
+\begin{DoxyCompactList}\small\item\em Close the gripper of the robot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} \mbox{\hyperlink{planner_8cpp_ae98c83240032893e728cc0741b31cbae}{get\+\_\+gripper\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em Read from the topic the actual value of the gripper joint. \end{DoxyCompactList}\item 
+Vector\+Xf \mbox{\hyperlink{planner_8cpp_a30fcac66fe6f7dbccdc056f6eaf22922}{get\+\_\+joint\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em Read from the topic the actual value of the joint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8cpp_a0b97577377e5b5f4bd8aea1e1a1ce746}{listen\+\_\+lego\+\_\+detection}} (ros\+::\+Rate rate)
+\begin{DoxyCompactList}\small\item\em Listen to the /lego\+\_\+position topic if messages arrives from the vision node; for each lego detected it sends the robot to the lego position knowing which type of lego it is. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+void \mbox{\hyperlink{planner_8cpp_a8516a676d1a960d60b79d9ee645f1701}{move\+\_\+to\+\_\+home}} ()
+\begin{DoxyCompactList}\small\item\em Moves the robot to the home position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8cpp_a44a60afd2636a2bf30a15961fd1ae277}{open\+\_\+gripper}} (float amp)
+\begin{DoxyCompactList}\small\item\em Open the gripper of the robot. \end{DoxyCompactList}\item 
+Vector3f \mbox{\hyperlink{planner_8cpp_a5cfb629f7f349b949bc3276258220dbb}{quat2eul}} (Quaternionf q)
+\begin{DoxyCompactList}\small\item\em Convert from Quaternion to Euler Angles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8cpp_a6d65be36ed902fbb1f13365ed387a34d}{set\+\_\+joint\+\_\+states}} (Vector\+Xf joint\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Posts on the topic the vector joint\+\_\+pos, which contains the value of the angles, that all joints must reach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8cpp_a2f999550c1b070e3d579c54fc8a818b6}{wait\+Joints}} (bool wait\+Rot, Vector3f xef, Vector3f phief)
+\begin{DoxyCompactList}\small\item\em Wait for joints to be at the final position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8cpp_a5f91a751d776ea0ed0660cba79b179e4}{wait\+Sec}} (float t)
+\begin{DoxyCompactList}\small\item\em Wait for the specified time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main function and planning of the movement based on the messages received from the vision; also getters and setters for joints are present. 
+
+\begin{DoxyAuthor}{Author}
+Soldera Marco (\href{mailto:marco.soldera@studenti.unitn.it}{\texttt{ marco.\+soldera@studenti.\+unitn.\+it}}) -\/ Group Soldera Marco and Morandin Marco 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/02-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{planner_8cpp_a7f61eba62a3661bcd27f0af694fb346c}\label{planner_8cpp_a7f61eba62a3661bcd27f0af694fb346c} 
+\index{planner.cpp@{planner.cpp}!close\_gripper@{close\_gripper}}
+\index{close\_gripper@{close\_gripper}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{close\_gripper()}{close\_gripper()}}
+{\footnotesize\ttfamily void close\+\_\+gripper (\begin{DoxyParamCaption}\item[{float}]{amp }\end{DoxyParamCaption})}
+
+
+
+Close the gripper of the robot. 
+
+We public directly on the topic the angles that we want to reach with the fingers of the gripper
+
+
+\begin{DoxyParams}{Parameters}
+{\em amp} & Required negative gripper length (positive value) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_ae98c83240032893e728cc0741b31cbae}\label{planner_8cpp_ae98c83240032893e728cc0741b31cbae} 
+\index{planner.cpp@{planner.cpp}!get\_gripper\_states@{get\_gripper\_states}}
+\index{get\_gripper\_states@{get\_gripper\_states}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_gripper\_states()}{get\_gripper\_states()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} get\+\_\+gripper\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read from the topic the actual value of the gripper joint. 
+
+\begin{DoxyReturn}{Returns}
+Gripper\+State 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a30fcac66fe6f7dbccdc056f6eaf22922}\label{planner_8cpp_a30fcac66fe6f7dbccdc056f6eaf22922} 
+\index{planner.cpp@{planner.cpp}!get\_joint\_states@{get\_joint\_states}}
+\index{get\_joint\_states@{get\_joint\_states}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_joint\_states()}{get\_joint\_states()}}
+{\footnotesize\ttfamily Vector\+Xf get\+\_\+joint\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read from the topic the actual value of the joint. 
+
+\begin{DoxyReturn}{Returns}
+Vector6f 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a0b97577377e5b5f4bd8aea1e1a1ce746}\label{planner_8cpp_a0b97577377e5b5f4bd8aea1e1a1ce746} 
+\index{planner.cpp@{planner.cpp}!listen\_lego\_detection@{listen\_lego\_detection}}
+\index{listen\_lego\_detection@{listen\_lego\_detection}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{listen\_lego\_detection()}{listen\_lego\_detection()}}
+{\footnotesize\ttfamily void listen\+\_\+lego\+\_\+detection (\begin{DoxyParamCaption}\item[{ros\+::\+Rate}]{rate }\end{DoxyParamCaption})}
+
+
+
+Listen to the /lego\+\_\+position topic if messages arrives from the vision node; for each lego detected it sends the robot to the lego position knowing which type of lego it is. 
+
+Functions prototype.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & ros rate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{planner.cpp@{planner.cpp}!main@{main}}
+\index{main@{main}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8cpp_a8516a676d1a960d60b79d9ee645f1701}\label{planner_8cpp_a8516a676d1a960d60b79d9ee645f1701} 
+\index{planner.cpp@{planner.cpp}!move\_to\_home@{move\_to\_home}}
+\index{move\_to\_home@{move\_to\_home}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_to\_home()}{move\_to\_home()}}
+{\footnotesize\ttfamily void move\+\_\+to\+\_\+home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the robot to the home position. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a44a60afd2636a2bf30a15961fd1ae277}\label{planner_8cpp_a44a60afd2636a2bf30a15961fd1ae277} 
+\index{planner.cpp@{planner.cpp}!open\_gripper@{open\_gripper}}
+\index{open\_gripper@{open\_gripper}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{open\_gripper()}{open\_gripper()}}
+{\footnotesize\ttfamily void open\+\_\+gripper (\begin{DoxyParamCaption}\item[{float}]{amp }\end{DoxyParamCaption})}
+
+
+
+Open the gripper of the robot. 
+
+We public directly on the topic the angles that we want to reach with the fingers of the gripper
+
+
+\begin{DoxyParams}{Parameters}
+{\em amp} & Required gripper length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a5cfb629f7f349b949bc3276258220dbb}\label{planner_8cpp_a5cfb629f7f349b949bc3276258220dbb} 
+\index{planner.cpp@{planner.cpp}!quat2eul@{quat2eul}}
+\index{quat2eul@{quat2eul}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{quat2eul()}{quat2eul()}}
+{\footnotesize\ttfamily Vector3f quat2eul (\begin{DoxyParamCaption}\item[{Quaternionf}]{q }\end{DoxyParamCaption})}
+
+
+
+Convert from Quaternion to Euler Angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Quaternion to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3f 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a6d65be36ed902fbb1f13365ed387a34d}\label{planner_8cpp_a6d65be36ed902fbb1f13365ed387a34d} 
+\index{planner.cpp@{planner.cpp}!set\_joint\_states@{set\_joint\_states}}
+\index{set\_joint\_states@{set\_joint\_states}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_joint\_states()}{set\_joint\_states()}}
+{\footnotesize\ttfamily void set\+\_\+joint\+\_\+states (\begin{DoxyParamCaption}\item[{Vector\+Xf}]{joint\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Posts on the topic the vector joint\+\_\+pos, which contains the value of the angles, that all joints must reach. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+pos} & Vector that conatins the values of each joint angle position to be published \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a2f999550c1b070e3d579c54fc8a818b6}\label{planner_8cpp_a2f999550c1b070e3d579c54fc8a818b6} 
+\index{planner.cpp@{planner.cpp}!waitJoints@{waitJoints}}
+\index{waitJoints@{waitJoints}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{waitJoints()}{waitJoints()}}
+{\footnotesize\ttfamily void wait\+Joints (\begin{DoxyParamCaption}\item[{bool}]{wait\+Rot,  }\item[{Vector3f}]{xef,  }\item[{Vector3f}]{phief }\end{DoxyParamCaption})}
+
+
+
+Wait for joints to be at the final position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait\+Rot} & wait also for z rotation to be aligned \\
+\hline
+{\em xef} & final positon \\
+\hline
+{\em phief} & final rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8cpp_a5f91a751d776ea0ed0660cba79b179e4}\label{planner_8cpp_a5f91a751d776ea0ed0660cba79b179e4} 
+\index{planner.cpp@{planner.cpp}!waitSec@{waitSec}}
+\index{waitSec@{waitSec}!planner.cpp@{planner.cpp}}
+\doxysubsubsection{\texorpdfstring{waitSec()}{waitSec()}}
+{\footnotesize\ttfamily void wait\+Sec (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+Wait for the specified time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time to wait \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

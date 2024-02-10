@@ -1,0 +1,82 @@
+\doxysection{planner.\+h}
+\hypertarget{planner_8h_source}{}\label{planner_8h_source}\index{planner\_pkg/include/planner\_pkg/planner.h@{planner\_pkg/include/planner\_pkg/planner.h}}
+\mbox{\hyperlink{planner_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_\_PLANNER\_H\_\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_\_PLANNER\_H\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{movement_8h}{movement.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <planner\_pkg/legoDetection.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <planner\_pkg/legoGroup.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <ros/ros.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ Matrix<float,\ 2,\ 1>\ \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{GripperState}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{planner_8h_a3a220a3cc2c1dd78770ce3970f8763c8}{loop\_frequency}}\ =\ 1000.0;}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{planner_8h_a87177006588cab4f1dcd205dcce1e161}{timeStep}}\ =\ 0.001;}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{GripperState}}\ \mbox{\hyperlink{planner_8h_a3fc7b5a1906a4d1922600b6f95f65ca5}{actual\_gripper}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ ros::Publisher\ \mbox{\hyperlink{planner_8h_ad51c262d0f9b839c30a4d9f2b4810cc5}{pub\_joint\_states}};}
+\DoxyCodeLine{00048\ std\_msgs::Float64MultiArray\ \mbox{\hyperlink{planner_8h_a654dc05b8334dea8e5d2e04742bcb217}{jointState\_msg\_robot}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a0b97577377e5b5f4bd8aea1e1a1ce746}{listen\_lego\_detection}}(ros::Rate\ rate);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a8516a676d1a960d60b79d9ee645f1701}{move\_to\_home}}();}
+\DoxyCodeLine{00057\ Vector3f\ \mbox{\hyperlink{planner_8h_a5cfb629f7f349b949bc3276258220dbb}{quat2eul}}(Quaternionf\ q);}
+\DoxyCodeLine{00058\ VectorXf\ \mbox{\hyperlink{planner_8h_a30fcac66fe6f7dbccdc056f6eaf22922}{get\_joint\_states}}();}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_acddf508e6a64d9d19d0938a166c6fa1b}{set\_joint\_states}}(VectorXf\ q);}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{GripperState}}\ \mbox{\hyperlink{planner_8h_ae98c83240032893e728cc0741b31cbae}{get\_gripper\_states}}();}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a44a60afd2636a2bf30a15961fd1ae277}{open\_gripper}}(\textcolor{keywordtype}{float}\ amp);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a7f61eba62a3661bcd27f0af694fb346c}{close\_gripper}}(\textcolor{keywordtype}{float}\ amp);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a5f91a751d776ea0ed0660cba79b179e4}{waitSec}}(\textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{planner_8h_a2f999550c1b070e3d579c54fc8a818b6}{waitJoints}}(\textcolor{keywordtype}{bool}\ waitRot,\ Vector3f\ xef,\ Vector3f\ phief);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ Vector3f\ \mbox{\hyperlink{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41}{X1\_Y1\_Z2}}(0.92,\ 0.27,\ 0.88);}
+\DoxyCodeLine{00072\ Vector3f\ \mbox{\hyperlink{planner_8h_a335dfd0575eefbfecd42a800659067ec}{X1\_Y2\_Z1}}(0.77,\ 0.27,\ 0.88);}
+\DoxyCodeLine{00073\ Vector3f\ \mbox{\hyperlink{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b}{X1\_Y2\_Z2}}(0.62,\ 0.27,\ 0.88);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ Vector3f\ \mbox{\hyperlink{planner_8h_a2d2336f61e9ee349d794739527bc0628}{X1\_Y2\_Z2\_CHAMFER}}(0.92,\ 0.42,\ 0.88);}
+\DoxyCodeLine{00076\ Vector3f\ \mbox{\hyperlink{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6}{X1\_Y2\_Z2\_TWINFILLET}}(0.77,\ 0.42,\ 0.88);}
+\DoxyCodeLine{00077\ Vector3f\ \mbox{\hyperlink{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30}{X2\_Y2\_Z2}}(0.62,\ 0.42,\ 0.89);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ Vector3f\ \mbox{\hyperlink{planner_8h_aa9bb33e561a10534c79a4a4982400c4c}{X2\_Y2\_Z2\_FILLET}}(0.92,\ 0.56,\ 0.89);}
+\DoxyCodeLine{00080\ Vector3f\ \mbox{\hyperlink{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1}{X1\_Y3\_Z2}}(0.77,\ 0.56,\ 0.88);}
+\DoxyCodeLine{00081\ Vector3f\ \mbox{\hyperlink{planner_8h_a7e8a9224e56635554ab3142cb9c96662}{X1\_Y3\_Z2\_FILLET}}(0.62,\ 0.56,\ 0.88);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ Vector3f\ \mbox{\hyperlink{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2}{X1\_Y4\_Z1}}(0.87,\ 0.72,\ 0.88);}
+\DoxyCodeLine{00084\ Vector3f\ \mbox{\hyperlink{planner_8h_a34d285150d76d06f642a4b92a7507132}{X1\_Y4\_Z2}}(0.65,\ 0.72,\ 0.88);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ map<std::string,\ Vector3f>\ \mbox{\hyperlink{planner_8h_abdc197e11915c823d1378834f48de56a}{models\_map}}\{}
+\DoxyCodeLine{00087\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y1-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41}{X1\_Y1\_Z2}}\},}
+\DoxyCodeLine{00088\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z1"{}},\ \mbox{\hyperlink{planner_8h_a335dfd0575eefbfecd42a800659067ec}{X1\_Y2\_Z1}}\},}
+\DoxyCodeLine{00089\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b}{X1\_Y2\_Z2}}\},}
+\DoxyCodeLine{00090\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2-\/CHAMFER"{}},\ \mbox{\hyperlink{planner_8h_a2d2336f61e9ee349d794739527bc0628}{X1\_Y2\_Z2\_CHAMFER}}\},}
+\DoxyCodeLine{00091\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2-\/TWINFILLET"{}},\ \mbox{\hyperlink{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6}{X1\_Y2\_Z2\_TWINFILLET}}\},}
+\DoxyCodeLine{00092\ \ \ \ \ \{\textcolor{stringliteral}{"{}X2-\/Y2-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30}{X2\_Y2\_Z2}}\},}
+\DoxyCodeLine{00093\ \ \ \ \ \{\textcolor{stringliteral}{"{}X2-\/Y2-\/Z2-\/FILLET"{}},\mbox{\hyperlink{planner_8h_aa9bb33e561a10534c79a4a4982400c4c}{X2\_Y2\_Z2\_FILLET}}\},}
+\DoxyCodeLine{00094\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y3-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1}{X1\_Y3\_Z2}}\},}
+\DoxyCodeLine{00095\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y3-\/Z2-\/FILLET"{}},\mbox{\hyperlink{planner_8h_a7e8a9224e56635554ab3142cb9c96662}{X1\_Y3\_Z2\_FILLET}}\},}
+\DoxyCodeLine{00096\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y4-\/Z1"{}},\ \mbox{\hyperlink{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2}{X1\_Y4\_Z1}}\},}
+\DoxyCodeLine{00097\ \ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y4-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a34d285150d76d06f642a4b92a7507132}{X1\_Y4\_Z2}}\}}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

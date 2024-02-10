@@ -1,0 +1,40 @@
+\doxysection{movement.\+h}
+\hypertarget{movement_8h_source}{}\label{movement_8h_source}\index{planner\_pkg/include/planner\_pkg/movement.h@{planner\_pkg/include/planner\_pkg/movement.h}}
+\mbox{\hyperlink{movement_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_\_MOVEMENT\_H\_\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_\_MOVEMENT\_H\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{kinematics_8h}{kinematics.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}ros/ros.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <std\_msgs/Float64MultiArray.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <sensor\_msgs/JointState.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{movement_8h_ad2d5052e2edaedc2fa82885d3cf4743d}{maxT}}\ =\ 6;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{inline}\ Quaternionf\ \mbox{\hyperlink{movement_8h_a54ad961cee9a550724ec35fe3c6dd8b1}{operator\ *}}(\textcolor{keywordtype}{float}\ num,\ \textcolor{keyword}{const}\ Quaternionf\&\ q)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ Quaternionf(q.x()\ *\ num,\ q.y()\ *\ num,\ q.z()\ *\ num,\ q.w()\ *\ num);}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ Vector3f\ \mbox{\hyperlink{movement_8h_a4af3ea690fcc86203c5005b97ea05dd0}{pd}}(\textcolor{keywordtype}{float}\ t,\ Vector3f\ xef,\ Vector3f\ xe0);}
+\DoxyCodeLine{00050\ Quaternionf\ \mbox{\hyperlink{movement_8h_a782005693f0b37073d6c508c052e877a}{qd}}(\textcolor{keywordtype}{float}\ tb,\ Quaternionf\ q0,\ Quaternionf\ qf);}
+\DoxyCodeLine{00051\ VectorXf\ \mbox{\hyperlink{movement_8h_a182000c3ed5558cc957689e2c6a764ae}{invDiffKinematicControlCompleteQuaternion}}(VectorXf\ q,\ Vector3f\ xe,\ Vector3f\ xd,\ Vector3f\ vd,\ Vector3f\ omegad,\ Quaternionf\ qe,\ Quaternionf\ \mbox{\hyperlink{movement_8h_a782005693f0b37073d6c508c052e877a}{qd}},\ \ Matrix3f\ Kp,\ Matrix3f\ Kq,\ \textcolor{keywordtype}{int}\ f);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{movement_8h_aafc78006d7d0c806bb4e40e3be1aae05}{invDiffKinematicControlSimCompleteQuaternion}}(Vector3f\ xef,\ Vector3f\ phief,\ \textcolor{keywordtype}{double}\ dt,\ VectorXf\ jstates,\ \textcolor{keywordtype}{void}\ (*send\_j)(VectorXf));}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

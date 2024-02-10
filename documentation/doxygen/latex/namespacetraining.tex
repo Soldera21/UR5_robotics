@@ -1,0 +1,62 @@
+\doxysection{training Namespace Reference}
+\hypertarget{namespacetraining}{}\label{namespacetraining}\index{training@{training}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacetraining_aa68b7f62450486408460e0dbe7e65e9a}{metrics}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacetraining_a508cc3106d2c29fe07dc87cbe3ea6927}{model}} = YOLO(\textquotesingle{}yolov8m.\+pt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacetraining_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} = os.\+getcwd()
+\item 
+\mbox{\hyperlink{namespacetraining_a339bb5524b06e496a6aaa0a97a4a8d21}{results}}
+\item 
+\mbox{\hyperlink{namespacetraining_a67f23769dfcb36d2355c8fa05dbf3b59}{split}} = len(\mbox{[}entry for entry in os.\+listdir(\mbox{\hyperlink{namespacetraining_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} + \textquotesingle{}/split\+\_\+5\+\_\+5-\/Fold\+\_\+\+Cross-\/val\textquotesingle{}) if os.\+path.\+isdir(os.\+path.\+join(\mbox{\hyperlink{namespacetraining_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} + \textquotesingle{}/split\+\_\+5\+\_\+5-\/Fold\+\_\+\+Cross-\/val\textquotesingle{}, entry))\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetraining_aa68b7f62450486408460e0dbe7e65e9a}\label{namespacetraining_aa68b7f62450486408460e0dbe7e65e9a} 
+\index{training@{training}!metrics@{metrics}}
+\index{metrics@{metrics}!training@{training}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily list metrics = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{namespacetraining_a508cc3106d2c29fe07dc87cbe3ea6927}\label{namespacetraining_a508cc3106d2c29fe07dc87cbe3ea6927} 
+\index{training@{training}!model@{model}}
+\index{model@{model}!training@{training}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily model = YOLO(\textquotesingle{}yolov8m.\+pt\textquotesingle{})}
+
+\Hypertarget{namespacetraining_aaebfa0b7200ff34091492562117de13b}\label{namespacetraining_aaebfa0b7200ff34091492562117de13b} 
+\index{training@{training}!PROJECT\_DIR@{PROJECT\_DIR}}
+\index{PROJECT\_DIR@{PROJECT\_DIR}!training@{training}}
+\doxysubsubsection{\texorpdfstring{PROJECT\_DIR}{PROJECT\_DIR}}
+{\footnotesize\ttfamily PROJECT\+\_\+\+DIR = os.\+getcwd()}
+
+\Hypertarget{namespacetraining_a339bb5524b06e496a6aaa0a97a4a8d21}\label{namespacetraining_a339bb5524b06e496a6aaa0a97a4a8d21} 
+\index{training@{training}!results@{results}}
+\index{results@{results}!training@{training}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily results}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ model.train(}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ data=PROJECT\_DIR\ +\ \textcolor{stringliteral}{'/split\_5\_5-\/Fold\_Cross-\/val/split\_'}\ +\ str(i+1)\ +\ \textcolor{stringliteral}{'/split\_'}\ +\ str(i+1)\ +\ \textcolor{stringliteral}{'\_dataset.yaml'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ epochs=20,}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ imgsz=1024,}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ device=[0,1],}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ save\ =\ \textcolor{keyword}{True},\ }
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ workers\ =\ 8,}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ batch\ =\ 10,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ project\ =\ \textcolor{stringliteral}{'robotica'},}
+\DoxyCodeLine{00010\ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacetraining_a67f23769dfcb36d2355c8fa05dbf3b59}\label{namespacetraining_a67f23769dfcb36d2355c8fa05dbf3b59} 
+\index{training@{training}!split@{split}}
+\index{split@{split}!training@{training}}
+\doxysubsubsection{\texorpdfstring{split}{split}}
+{\footnotesize\ttfamily split = len(\mbox{[}entry for entry in os.\+listdir(\mbox{\hyperlink{namespacetraining_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} + \textquotesingle{}/split\+\_\+5\+\_\+5-\/Fold\+\_\+\+Cross-\/val\textquotesingle{}) if os.\+path.\+isdir(os.\+path.\+join(\mbox{\hyperlink{namespacetraining_aaebfa0b7200ff34091492562117de13b}{PROJECT\+\_\+\+DIR}} + \textquotesingle{}/split\+\_\+5\+\_\+5-\/Fold\+\_\+\+Cross-\/val\textquotesingle{}, entry))\mbox{]})}
+

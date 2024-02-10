@@ -1,0 +1,44 @@
+\doxysection{vision/vision.py File Reference}
+\hypertarget{vision_8py}{}\label{vision_8py}\index{vision/vision.py@{vision/vision.py}}
+
+
+Detect blocks from a photos caming from the ZED camera and find position of them.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacevision}{vision}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacevision_a9beb3a4239c23df7b695ea219c2cf257}{build\+\_\+pose}} (block)
+\begin{DoxyCompactList}\small\item\em Find three useful points for compute position and orientation of a block from all the points contained in it, moreover compute the coordinates of the center, find orientation, convert it to quaternions and in the end create the Pose object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacevision_a908950adc5244a58a3902c293804b563}{find\+\_\+center}} (y\+\_\+max\+\_\+point, y\+\_\+min\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Find the coordinates of the center of a block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacevision_a68dc0e6342330fec7090f4f229cb854c}{find\+\_\+orientation}} (y\+\_\+max\+\_\+point, x\+\_\+min\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Find the yaw of a block in Euler angles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacevision_a97d0ebd7cb702ca4e3afdb0ab93cb91e}{point\+Cloud\+Call\+Back}} ()
+\begin{DoxyCompactList}\small\item\em This function waits a message from a pointcloud and then reads the points from it and compute the position and the orientation of the blocks in the Gazebo scenario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacevision_a9216416d0ef082d912f359256fea6072}{receive\+\_\+image}} (data)
+\begin{DoxyCompactList}\small\item\em Recive image from ros and save it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacevision_ad8b0a1964f6e8289c858108ae891718e}{image\+\_\+sub}} = rospy.\+Subscriber(\mbox{\hyperlink{namespaceparams_aa335fc82eec63b558cba9b6b1e8239ed}{IMAGE\+\_\+\+SUB\+\_\+\+TOPIC}}, Image, callback=\mbox{\hyperlink{namespacevision_a9216416d0ef082d912f359256fea6072}{receive\+\_\+image}}, queue\+\_\+size = 1)
+\item 
+\mbox{\hyperlink{namespacevision_a57055112e1245a60adfa7691a3f48540}{loop\+\_\+rate}} = rospy.\+Rate(1.)
+\item 
+\mbox{\hyperlink{namespacevision_a60a14dfb11f7c0e0cf25307aac1b8458}{pos\+\_\+pub}} = rospy.\+Publisher(\mbox{\hyperlink{namespaceparams_a5992b09f0f1b706370b615e7d8cfda6b}{PUB\+\_\+\+TOPIC}}, lego\+Group, queue\+\_\+size = 11)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Detect blocks from a photos caming from the ZED camera and find position of them. 
+
+\hypertarget{vision_8py_module_authors}{}\doxysubsection{\texorpdfstring{Author(s)}{Author(s)}}\label{vision_8py_module_authors}
+
+\begin{DoxyItemize}
+\item Created by Marco Morandin 
+\end{DoxyItemize}

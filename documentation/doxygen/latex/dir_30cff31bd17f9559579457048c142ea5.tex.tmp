@@ -1,0 +1,13 @@
+\doxysection{planner\+\_\+pkg/src Directory Reference}
+\hypertarget{dir_30cff31bd17f9559579457048c142ea5}{}\label{dir_30cff31bd17f9559579457048c142ea5}\index{planner\_pkg/src Directory Reference@{planner\_pkg/src Directory Reference}}
+Directory dependency graph for src\+:
+% FIG 0
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{kinematics_8cpp}{kinematics.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Functions in this file are used to calculate transformation matrices, direct and inverse kinematics, jacobian matrices and trasformation between Euler angles and rotation matrices. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{movement_8cpp}{movement.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Functions in this file are used to calculate the trajectory based on quaternions and velocities of the joints. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{planner_8cpp}{planner.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Main function and planning of the movement based on the messages received from the vision; also getters and setters for joints are present. \end{DoxyCompactList}\end{DoxyCompactItemize}

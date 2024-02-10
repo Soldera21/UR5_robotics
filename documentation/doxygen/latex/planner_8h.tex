@@ -1,0 +1,432 @@
+\doxysection{planner\+\_\+pkg/include/planner\+\_\+pkg/planner.h File Reference}
+\hypertarget{planner_8h}{}\label{planner_8h}\index{planner\_pkg/include/planner\_pkg/planner.h@{planner\_pkg/include/planner\_pkg/planner.h}}
+{\ttfamily \#include "{}movement.\+h"{}}\newline
+{\ttfamily \#include $<$planner\+\_\+pkg/lego\+Detection.\+h$>$}\newline
+{\ttfamily \#include $<$planner\+\_\+pkg/lego\+Group.\+h$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for planner.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Matrix$<$ float, 2, 1 $>$ \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}}
+\begin{DoxyCompactList}\small\item\em Position of the components of the gripper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{planner_8h_a7f61eba62a3661bcd27f0af694fb346c}{close\+\_\+gripper}} (float amp)
+\begin{DoxyCompactList}\small\item\em Close the gripper of the robot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} \mbox{\hyperlink{planner_8h_ae98c83240032893e728cc0741b31cbae}{get\+\_\+gripper\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em Read from the topic the actual value of the gripper joint. \end{DoxyCompactList}\item 
+Vector\+Xf \mbox{\hyperlink{planner_8h_a30fcac66fe6f7dbccdc056f6eaf22922}{get\+\_\+joint\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em Read from the topic the actual value of the joint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_a0b97577377e5b5f4bd8aea1e1a1ce746}{listen\+\_\+lego\+\_\+detection}} (ros\+::\+Rate rate)
+\begin{DoxyCompactList}\small\item\em Functions prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_a8516a676d1a960d60b79d9ee645f1701}{move\+\_\+to\+\_\+home}} ()
+\begin{DoxyCompactList}\small\item\em Moves the robot to the home position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_a44a60afd2636a2bf30a15961fd1ae277}{open\+\_\+gripper}} (float amp)
+\begin{DoxyCompactList}\small\item\em Open the gripper of the robot. \end{DoxyCompactList}\item 
+Vector3f \mbox{\hyperlink{planner_8h_a5cfb629f7f349b949bc3276258220dbb}{quat2eul}} (Quaternionf q)
+\begin{DoxyCompactList}\small\item\em Convert from Quaternion to Euler Angles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_acddf508e6a64d9d19d0938a166c6fa1b}{set\+\_\+joint\+\_\+states}} (Vector\+Xf q)
+\begin{DoxyCompactList}\small\item\em Posts on the topic the vector joint\+\_\+pos, which contains the value of the angles, that all joints must reach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_a2f999550c1b070e3d579c54fc8a818b6}{wait\+Joints}} (bool wait\+Rot, Vector3f xef, Vector3f phief)
+\begin{DoxyCompactList}\small\item\em Wait for joints to be at the final position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{planner_8h_a5f91a751d776ea0ed0660cba79b179e4}{wait\+Sec}} (float t)
+\begin{DoxyCompactList}\small\item\em Wait for the specified time. \end{DoxyCompactList}\item 
+Vector3f \mbox{\hyperlink{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41}{X1\+\_\+\+Y1\+\_\+\+Z2}} (0.\+92, 0.\+27, 0.\+88)
+\begin{DoxyCompactList}\small\item\em Final positions of bricks based on type. \end{DoxyCompactList}\item 
+Vector3f \mbox{\hyperlink{planner_8h_a335dfd0575eefbfecd42a800659067ec}{X1\+\_\+\+Y2\+\_\+\+Z1}} (0.\+77, 0.\+27, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b}{X1\+\_\+\+Y2\+\_\+\+Z2}} (0.\+62, 0.\+27, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a2d2336f61e9ee349d794739527bc0628}{X1\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+CHAMFER}} (0.\+92, 0.\+42, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6}{X1\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+TWINFILLET}} (0.\+77, 0.\+42, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1}{X1\+\_\+\+Y3\+\_\+\+Z2}} (0.\+77, 0.\+56, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a7e8a9224e56635554ab3142cb9c96662}{X1\+\_\+\+Y3\+\_\+\+Z2\+\_\+\+FILLET}} (0.\+62, 0.\+56, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2}{X1\+\_\+\+Y4\+\_\+\+Z1}} (0.\+87, 0.\+72, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a34d285150d76d06f642a4b92a7507132}{X1\+\_\+\+Y4\+\_\+\+Z2}} (0.\+65, 0.\+72, 0.\+88)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30}{X2\+\_\+\+Y2\+\_\+\+Z2}} (0.\+62, 0.\+42, 0.\+89)
+\item 
+Vector3f \mbox{\hyperlink{planner_8h_aa9bb33e561a10534c79a4a4982400c4c}{X2\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+FILLET}} (0.\+92, 0.\+56, 0.\+89)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} \mbox{\hyperlink{planner_8h_a3fc7b5a1906a4d1922600b6f95f65ca5}{actual\+\_\+gripper}}
+\begin{DoxyCompactList}\small\item\em Position of the gripper. \end{DoxyCompactList}\item 
+std\+\_\+msgs\+::\+Float64\+Multi\+Array \mbox{\hyperlink{planner_8h_a654dc05b8334dea8e5d2e04742bcb217}{joint\+State\+\_\+msg\+\_\+robot}}
+\begin{DoxyCompactList}\small\item\em Structure of the message to be published with joint positions. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{planner_8h_a3a220a3cc2c1dd78770ce3970f8763c8}{loop\+\_\+frequency}} = 1000.\+0
+\begin{DoxyCompactList}\small\item\em Loop rate of the node. \end{DoxyCompactList}\item 
+map$<$ std\+::string, Vector3f $>$ \mbox{\hyperlink{planner_8h_abdc197e11915c823d1378834f48de56a}{models\+\_\+map}}
+\item 
+ros\+::\+Publisher \mbox{\hyperlink{planner_8h_ad51c262d0f9b839c30a4d9f2b4810cc5}{pub\+\_\+joint\+\_\+states}}
+\begin{DoxyCompactList}\small\item\em Publisher for the desired joint state. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{planner_8h_a87177006588cab4f1dcd205dcce1e161}{time\+Step}} = 0.\+001
+\begin{DoxyCompactList}\small\item\em Time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Soldera Marco (\href{mailto:marco.soldera@studenti.unitn.it}{\texttt{ marco.\+soldera@studenti.\+unitn.\+it}}) -\/ Group Soldera Marco and Morandin Marco 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/02-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}\label{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc} 
+\index{planner.h@{planner.h}!GripperState@{GripperState}}
+\index{GripperState@{GripperState}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{GripperState}{GripperState}}
+{\footnotesize\ttfamily typedef Matrix$<$float, 2, 1$>$ \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}}}
+
+
+
+Position of the components of the gripper. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{planner_8h_a7f61eba62a3661bcd27f0af694fb346c}\label{planner_8h_a7f61eba62a3661bcd27f0af694fb346c} 
+\index{planner.h@{planner.h}!close\_gripper@{close\_gripper}}
+\index{close\_gripper@{close\_gripper}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{close\_gripper()}{close\_gripper()}}
+{\footnotesize\ttfamily void close\+\_\+gripper (\begin{DoxyParamCaption}\item[{float}]{amp }\end{DoxyParamCaption})}
+
+
+
+Close the gripper of the robot. 
+
+We public directly on the topic the angles that we want to reach with the fingers of the gripper
+
+
+\begin{DoxyParams}{Parameters}
+{\em amp} & Required negative gripper length (positive value) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_ae98c83240032893e728cc0741b31cbae}\label{planner_8h_ae98c83240032893e728cc0741b31cbae} 
+\index{planner.h@{planner.h}!get\_gripper\_states@{get\_gripper\_states}}
+\index{get\_gripper\_states@{get\_gripper\_states}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{get\_gripper\_states()}{get\_gripper\_states()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} get\+\_\+gripper\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read from the topic the actual value of the gripper joint. 
+
+\begin{DoxyReturn}{Returns}
+Gripper\+State 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a30fcac66fe6f7dbccdc056f6eaf22922}\label{planner_8h_a30fcac66fe6f7dbccdc056f6eaf22922} 
+\index{planner.h@{planner.h}!get\_joint\_states@{get\_joint\_states}}
+\index{get\_joint\_states@{get\_joint\_states}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{get\_joint\_states()}{get\_joint\_states()}}
+{\footnotesize\ttfamily Vector\+Xf get\+\_\+joint\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read from the topic the actual value of the joint. 
+
+\begin{DoxyReturn}{Returns}
+Vector6f 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a0b97577377e5b5f4bd8aea1e1a1ce746}\label{planner_8h_a0b97577377e5b5f4bd8aea1e1a1ce746} 
+\index{planner.h@{planner.h}!listen\_lego\_detection@{listen\_lego\_detection}}
+\index{listen\_lego\_detection@{listen\_lego\_detection}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{listen\_lego\_detection()}{listen\_lego\_detection()}}
+{\footnotesize\ttfamily void listen\+\_\+lego\+\_\+detection (\begin{DoxyParamCaption}\item[{ros\+::\+Rate}]{rate }\end{DoxyParamCaption})}
+
+
+
+Functions prototype. 
+
+Functions prototype.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & ros rate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a8516a676d1a960d60b79d9ee645f1701}\label{planner_8h_a8516a676d1a960d60b79d9ee645f1701} 
+\index{planner.h@{planner.h}!move\_to\_home@{move\_to\_home}}
+\index{move\_to\_home@{move\_to\_home}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{move\_to\_home()}{move\_to\_home()}}
+{\footnotesize\ttfamily void move\+\_\+to\+\_\+home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the robot to the home position. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a44a60afd2636a2bf30a15961fd1ae277}\label{planner_8h_a44a60afd2636a2bf30a15961fd1ae277} 
+\index{planner.h@{planner.h}!open\_gripper@{open\_gripper}}
+\index{open\_gripper@{open\_gripper}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{open\_gripper()}{open\_gripper()}}
+{\footnotesize\ttfamily void open\+\_\+gripper (\begin{DoxyParamCaption}\item[{float}]{amp }\end{DoxyParamCaption})}
+
+
+
+Open the gripper of the robot. 
+
+We public directly on the topic the angles that we want to reach with the fingers of the gripper
+
+
+\begin{DoxyParams}{Parameters}
+{\em amp} & Required gripper length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a5cfb629f7f349b949bc3276258220dbb}\label{planner_8h_a5cfb629f7f349b949bc3276258220dbb} 
+\index{planner.h@{planner.h}!quat2eul@{quat2eul}}
+\index{quat2eul@{quat2eul}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{quat2eul()}{quat2eul()}}
+{\footnotesize\ttfamily Vector3f quat2eul (\begin{DoxyParamCaption}\item[{Quaternionf}]{q }\end{DoxyParamCaption})}
+
+
+
+Convert from Quaternion to Euler Angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Quaternion to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3f 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_acddf508e6a64d9d19d0938a166c6fa1b}\label{planner_8h_acddf508e6a64d9d19d0938a166c6fa1b} 
+\index{planner.h@{planner.h}!set\_joint\_states@{set\_joint\_states}}
+\index{set\_joint\_states@{set\_joint\_states}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{set\_joint\_states()}{set\_joint\_states()}}
+{\footnotesize\ttfamily void set\+\_\+joint\+\_\+states (\begin{DoxyParamCaption}\item[{Vector\+Xf}]{joint\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Posts on the topic the vector joint\+\_\+pos, which contains the value of the angles, that all joints must reach. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+pos} & Vector that conatins the values of each joint angle position to be published \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a2f999550c1b070e3d579c54fc8a818b6}\label{planner_8h_a2f999550c1b070e3d579c54fc8a818b6} 
+\index{planner.h@{planner.h}!waitJoints@{waitJoints}}
+\index{waitJoints@{waitJoints}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{waitJoints()}{waitJoints()}}
+{\footnotesize\ttfamily void wait\+Joints (\begin{DoxyParamCaption}\item[{bool}]{wait\+Rot,  }\item[{Vector3f}]{xef,  }\item[{Vector3f}]{phief }\end{DoxyParamCaption})}
+
+
+
+Wait for joints to be at the final position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait\+Rot} & wait also for z rotation to be aligned \\
+\hline
+{\em xef} & final positon \\
+\hline
+{\em phief} & final rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_a5f91a751d776ea0ed0660cba79b179e4}\label{planner_8h_a5f91a751d776ea0ed0660cba79b179e4} 
+\index{planner.h@{planner.h}!waitSec@{waitSec}}
+\index{waitSec@{waitSec}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{waitSec()}{waitSec()}}
+{\footnotesize\ttfamily void wait\+Sec (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+Wait for the specified time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time to wait \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41}\label{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41} 
+\index{planner.h@{planner.h}!X1\_Y1\_Z2@{X1\_Y1\_Z2}}
+\index{X1\_Y1\_Z2@{X1\_Y1\_Z2}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y1\_Z2()}{X1\_Y1\_Z2()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y1\+\_\+\+Z2 (\begin{DoxyParamCaption}\item[{0.}]{92,  }\item[{0.}]{27,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+
+
+Final positions of bricks based on type. 
+
+\Hypertarget{planner_8h_a335dfd0575eefbfecd42a800659067ec}\label{planner_8h_a335dfd0575eefbfecd42a800659067ec} 
+\index{planner.h@{planner.h}!X1\_Y2\_Z1@{X1\_Y2\_Z1}}
+\index{X1\_Y2\_Z1@{X1\_Y2\_Z1}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y2\_Z1()}{X1\_Y2\_Z1()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y2\+\_\+\+Z1 (\begin{DoxyParamCaption}\item[{0.}]{77,  }\item[{0.}]{27,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b}\label{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b} 
+\index{planner.h@{planner.h}!X1\_Y2\_Z2@{X1\_Y2\_Z2}}
+\index{X1\_Y2\_Z2@{X1\_Y2\_Z2}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y2\_Z2()}{X1\_Y2\_Z2()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y2\+\_\+\+Z2 (\begin{DoxyParamCaption}\item[{0.}]{62,  }\item[{0.}]{27,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a2d2336f61e9ee349d794739527bc0628}\label{planner_8h_a2d2336f61e9ee349d794739527bc0628} 
+\index{planner.h@{planner.h}!X1\_Y2\_Z2\_CHAMFER@{X1\_Y2\_Z2\_CHAMFER}}
+\index{X1\_Y2\_Z2\_CHAMFER@{X1\_Y2\_Z2\_CHAMFER}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y2\_Z2\_CHAMFER()}{X1\_Y2\_Z2\_CHAMFER()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+CHAMFER (\begin{DoxyParamCaption}\item[{0.}]{92,  }\item[{0.}]{42,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6}\label{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6} 
+\index{planner.h@{planner.h}!X1\_Y2\_Z2\_TWINFILLET@{X1\_Y2\_Z2\_TWINFILLET}}
+\index{X1\_Y2\_Z2\_TWINFILLET@{X1\_Y2\_Z2\_TWINFILLET}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y2\_Z2\_TWINFILLET()}{X1\_Y2\_Z2\_TWINFILLET()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+TWINFILLET (\begin{DoxyParamCaption}\item[{0.}]{77,  }\item[{0.}]{42,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1}\label{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1} 
+\index{planner.h@{planner.h}!X1\_Y3\_Z2@{X1\_Y3\_Z2}}
+\index{X1\_Y3\_Z2@{X1\_Y3\_Z2}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y3\_Z2()}{X1\_Y3\_Z2()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y3\+\_\+\+Z2 (\begin{DoxyParamCaption}\item[{0.}]{77,  }\item[{0.}]{56,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a7e8a9224e56635554ab3142cb9c96662}\label{planner_8h_a7e8a9224e56635554ab3142cb9c96662} 
+\index{planner.h@{planner.h}!X1\_Y3\_Z2\_FILLET@{X1\_Y3\_Z2\_FILLET}}
+\index{X1\_Y3\_Z2\_FILLET@{X1\_Y3\_Z2\_FILLET}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y3\_Z2\_FILLET()}{X1\_Y3\_Z2\_FILLET()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y3\+\_\+\+Z2\+\_\+\+FILLET (\begin{DoxyParamCaption}\item[{0.}]{62,  }\item[{0.}]{56,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2}\label{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2} 
+\index{planner.h@{planner.h}!X1\_Y4\_Z1@{X1\_Y4\_Z1}}
+\index{X1\_Y4\_Z1@{X1\_Y4\_Z1}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y4\_Z1()}{X1\_Y4\_Z1()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y4\+\_\+\+Z1 (\begin{DoxyParamCaption}\item[{0.}]{87,  }\item[{0.}]{72,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a34d285150d76d06f642a4b92a7507132}\label{planner_8h_a34d285150d76d06f642a4b92a7507132} 
+\index{planner.h@{planner.h}!X1\_Y4\_Z2@{X1\_Y4\_Z2}}
+\index{X1\_Y4\_Z2@{X1\_Y4\_Z2}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X1\_Y4\_Z2()}{X1\_Y4\_Z2()}}
+{\footnotesize\ttfamily Vector3f X1\+\_\+\+Y4\+\_\+\+Z2 (\begin{DoxyParamCaption}\item[{0.}]{65,  }\item[{0.}]{72,  }\item[{0.}]{88 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30}\label{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30} 
+\index{planner.h@{planner.h}!X2\_Y2\_Z2@{X2\_Y2\_Z2}}
+\index{X2\_Y2\_Z2@{X2\_Y2\_Z2}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X2\_Y2\_Z2()}{X2\_Y2\_Z2()}}
+{\footnotesize\ttfamily Vector3f X2\+\_\+\+Y2\+\_\+\+Z2 (\begin{DoxyParamCaption}\item[{0.}]{62,  }\item[{0.}]{42,  }\item[{0.}]{89 }\end{DoxyParamCaption})}
+
+\Hypertarget{planner_8h_aa9bb33e561a10534c79a4a4982400c4c}\label{planner_8h_aa9bb33e561a10534c79a4a4982400c4c} 
+\index{planner.h@{planner.h}!X2\_Y2\_Z2\_FILLET@{X2\_Y2\_Z2\_FILLET}}
+\index{X2\_Y2\_Z2\_FILLET@{X2\_Y2\_Z2\_FILLET}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{X2\_Y2\_Z2\_FILLET()}{X2\_Y2\_Z2\_FILLET()}}
+{\footnotesize\ttfamily Vector3f X2\+\_\+\+Y2\+\_\+\+Z2\+\_\+\+FILLET (\begin{DoxyParamCaption}\item[{0.}]{92,  }\item[{0.}]{56,  }\item[{0.}]{89 }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{planner_8h_a3fc7b5a1906a4d1922600b6f95f65ca5}\label{planner_8h_a3fc7b5a1906a4d1922600b6f95f65ca5} 
+\index{planner.h@{planner.h}!actual\_gripper@{actual\_gripper}}
+\index{actual\_gripper@{actual\_gripper}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{actual\_gripper}{actual\_gripper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{planner_8h_a96772f9d6f3d7223ea44a6013b5332cc}{Gripper\+State}} actual\+\_\+gripper}
+
+
+
+Position of the gripper. 
+
+\Hypertarget{planner_8h_a654dc05b8334dea8e5d2e04742bcb217}\label{planner_8h_a654dc05b8334dea8e5d2e04742bcb217} 
+\index{planner.h@{planner.h}!jointState\_msg\_robot@{jointState\_msg\_robot}}
+\index{jointState\_msg\_robot@{jointState\_msg\_robot}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{jointState\_msg\_robot}{jointState\_msg\_robot}}
+{\footnotesize\ttfamily std\+\_\+msgs\+::\+Float64\+Multi\+Array joint\+State\+\_\+msg\+\_\+robot}
+
+
+
+Structure of the message to be published with joint positions. 
+
+\Hypertarget{planner_8h_a3a220a3cc2c1dd78770ce3970f8763c8}\label{planner_8h_a3a220a3cc2c1dd78770ce3970f8763c8} 
+\index{planner.h@{planner.h}!loop\_frequency@{loop\_frequency}}
+\index{loop\_frequency@{loop\_frequency}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{loop\_frequency}{loop\_frequency}}
+{\footnotesize\ttfamily float loop\+\_\+frequency = 1000.\+0}
+
+
+
+Loop rate of the node. 
+
+\Hypertarget{planner_8h_abdc197e11915c823d1378834f48de56a}\label{planner_8h_abdc197e11915c823d1378834f48de56a} 
+\index{planner.h@{planner.h}!models\_map@{models\_map}}
+\index{models\_map@{models\_map}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{models\_map}{models\_map}}
+{\footnotesize\ttfamily map$<$std\+::string, Vector3f$>$ models\+\_\+map}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y1-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_ae221fde5df713ebe80ef1e4c7e710c41}{X1\_Y1\_Z2}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z1"{}},\ \mbox{\hyperlink{planner_8h_a335dfd0575eefbfecd42a800659067ec}{X1\_Y2\_Z1}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_adb1c190d9cc2a8c03e3c56a20178811b}{X1\_Y2\_Z2}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2-\/CHAMFER"{}},\ \mbox{\hyperlink{planner_8h_a2d2336f61e9ee349d794739527bc0628}{X1\_Y2\_Z2\_CHAMFER}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y2-\/Z2-\/TWINFILLET"{}},\ \mbox{\hyperlink{planner_8h_ac6a1357f743a8f7a25b52a2e09542dd6}{X1\_Y2\_Z2\_TWINFILLET}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X2-\/Y2-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a1b203aa1b6cbab317ed4d2428f666c30}{X2\_Y2\_Z2}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X2-\/Y2-\/Z2-\/FILLET"{}},\mbox{\hyperlink{planner_8h_aa9bb33e561a10534c79a4a4982400c4c}{X2\_Y2\_Z2\_FILLET}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y3-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a1e9fc773a4430a9896be11ba649d0aa1}{X1\_Y3\_Z2}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y3-\/Z2-\/FILLET"{}},\mbox{\hyperlink{planner_8h_a7e8a9224e56635554ab3142cb9c96662}{X1\_Y3\_Z2\_FILLET}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y4-\/Z1"{}},\ \mbox{\hyperlink{planner_8h_a86f79f6a4a5416e66ebafe71f0e692e2}{X1\_Y4\_Z1}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}X1-\/Y4-\/Z2"{}},\ \mbox{\hyperlink{planner_8h_a34d285150d76d06f642a4b92a7507132}{X1\_Y4\_Z2}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{planner_8h_ad51c262d0f9b839c30a4d9f2b4810cc5}\label{planner_8h_ad51c262d0f9b839c30a4d9f2b4810cc5} 
+\index{planner.h@{planner.h}!pub\_joint\_states@{pub\_joint\_states}}
+\index{pub\_joint\_states@{pub\_joint\_states}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{pub\_joint\_states}{pub\_joint\_states}}
+{\footnotesize\ttfamily ros\+::\+Publisher pub\+\_\+joint\+\_\+states}
+
+
+
+Publisher for the desired joint state. 
+
+\Hypertarget{planner_8h_a87177006588cab4f1dcd205dcce1e161}\label{planner_8h_a87177006588cab4f1dcd205dcce1e161} 
+\index{planner.h@{planner.h}!timeStep@{timeStep}}
+\index{timeStep@{timeStep}!planner.h@{planner.h}}
+\doxysubsubsection{\texorpdfstring{timeStep}{timeStep}}
+{\footnotesize\ttfamily double time\+Step = 0.\+001}
+
+
+
+Time step. 
+

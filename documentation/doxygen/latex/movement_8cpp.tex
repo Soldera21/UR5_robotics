@@ -1,0 +1,147 @@
+\doxysection{planner\+\_\+pkg/src/movement.cpp File Reference}
+\hypertarget{movement_8cpp}{}\label{movement_8cpp}\index{planner\_pkg/src/movement.cpp@{planner\_pkg/src/movement.cpp}}
+
+
+Functions in this file are used to calculate the trajectory based on quaternions and velocities of the joints.  
+
+
+{\ttfamily \#include "{}planner\+\_\+pkg/movement.\+h"{}}\newline
+Include dependency graph for movement.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector\+Xf \mbox{\hyperlink{movement_8cpp_a182000c3ed5558cc957689e2c6a764ae}{inv\+Diff\+Kinematic\+Control\+Complete\+Quaternion}} (Vector\+Xf q, Vector3f xe, Vector3f xd, Vector3f vd, Vector3f omegad, Quaternionf qe, Quaternionf \mbox{\hyperlink{movement_8cpp_a782005693f0b37073d6c508c052e877a}{qd}}, Matrix3f Kp, Matrix3f Kq, int f)
+\begin{DoxyCompactList}\small\item\em Calculates joint velocities using the jacobian matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{movement_8cpp_aafc78006d7d0c806bb4e40e3be1aae05}{inv\+Diff\+Kinematic\+Control\+Sim\+Complete\+Quaternion}} (Vector3f xef, Vector3f phief, double dt, Vector\+Xf jstates, void(\texorpdfstring{$\ast$}{*}send\+\_\+j)(Vector\+Xf))
+\begin{DoxyCompactList}\small\item\em Calculates joint configs using quaternions. \end{DoxyCompactList}\item 
+Vector3f \mbox{\hyperlink{movement_8cpp_a3bbeccf58cacbbb84d7d61d4535fffd4}{pd}} (float tb, Vector3f xef, Vector3f xe0)
+\begin{DoxyCompactList}\small\item\em Calculates trajectory for the end-\/effector position. \end{DoxyCompactList}\item 
+Quaternionf \mbox{\hyperlink{movement_8cpp_a782005693f0b37073d6c508c052e877a}{qd}} (float tb, Quaternionf q0, Quaternionf qf)
+\begin{DoxyCompactList}\small\item\em Calculates trajectory for the end-\/effector orientation with quaternions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions in this file are used to calculate the trajectory based on quaternions and velocities of the joints. 
+
+\begin{DoxyAuthor}{Author}
+Soldera Marco (\href{mailto:marco.soldera@studenti.unitn.it}{\texttt{ marco.\+soldera@studenti.\+unitn.\+it}}) -\/ Group Soldera Marco and Morandin Marco 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/02-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{movement_8cpp_a182000c3ed5558cc957689e2c6a764ae}\label{movement_8cpp_a182000c3ed5558cc957689e2c6a764ae} 
+\index{movement.cpp@{movement.cpp}!invDiffKinematicControlCompleteQuaternion@{invDiffKinematicControlCompleteQuaternion}}
+\index{invDiffKinematicControlCompleteQuaternion@{invDiffKinematicControlCompleteQuaternion}!movement.cpp@{movement.cpp}}
+\doxysubsubsection{\texorpdfstring{invDiffKinematicControlCompleteQuaternion()}{invDiffKinematicControlCompleteQuaternion()}}
+{\footnotesize\ttfamily Vector\+Xf inv\+Diff\+Kinematic\+Control\+Complete\+Quaternion (\begin{DoxyParamCaption}\item[{Vector\+Xf}]{q,  }\item[{Vector3f}]{xe,  }\item[{Vector3f}]{xd,  }\item[{Vector3f}]{vd,  }\item[{Vector3f}]{omegad,  }\item[{Quaternionf}]{qe,  }\item[{Quaternionf}]{qd,  }\item[{Matrix3f}]{Kp,  }\item[{Matrix3f}]{Kq,  }\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Calculates joint velocities using the jacobian matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The current joint config \\
+\hline
+{\em xe} & The current end-\/effector position \\
+\hline
+{\em xd} & The desired end-\/effector position \\
+\hline
+{\em vd} & The desired end-\/effector linear velocity \\
+\hline
+{\em omegad} & The desired end-\/effector angular velocity \\
+\hline
+{\em qe} & The current end-\/effector rotation in quaternion \\
+\hline
+{\em qd} & The desired end-\/effector rotation in quaternion \\
+\hline
+{\em Kd} & The position gain \\
+\hline
+{\em Kq} & The orientation gain \\
+\hline
+{\em f} & counter for debugging \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector6f 
+\end{DoxyReturn}
+\Hypertarget{movement_8cpp_aafc78006d7d0c806bb4e40e3be1aae05}\label{movement_8cpp_aafc78006d7d0c806bb4e40e3be1aae05} 
+\index{movement.cpp@{movement.cpp}!invDiffKinematicControlSimCompleteQuaternion@{invDiffKinematicControlSimCompleteQuaternion}}
+\index{invDiffKinematicControlSimCompleteQuaternion@{invDiffKinematicControlSimCompleteQuaternion}!movement.cpp@{movement.cpp}}
+\doxysubsubsection{\texorpdfstring{invDiffKinematicControlSimCompleteQuaternion()}{invDiffKinematicControlSimCompleteQuaternion()}}
+{\footnotesize\ttfamily void inv\+Diff\+Kinematic\+Control\+Sim\+Complete\+Quaternion (\begin{DoxyParamCaption}\item[{Vector3f}]{xef,  }\item[{Vector3f}]{phief,  }\item[{double}]{dt,  }\item[{Vector\+Xf}]{jstates,  }\item[{void(\texorpdfstring{$\ast$}{*})(Vector\+Xf)}]{send\+\_\+j }\end{DoxyParamCaption})}
+
+
+
+Calculates joint configs using quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xef} & Desired end-\/effector position \\
+\hline
+{\em phief} & Desired end-\/effector orientation \\
+\hline
+{\em dt} & Time step \\
+\hline
+{\em jstates} & Actual state of the joints \\
+\hline
+{\em send\+\_\+j} & Function to send joint states \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{movement_8cpp_a3bbeccf58cacbbb84d7d61d4535fffd4}\label{movement_8cpp_a3bbeccf58cacbbb84d7d61d4535fffd4} 
+\index{movement.cpp@{movement.cpp}!pd@{pd}}
+\index{pd@{pd}!movement.cpp@{movement.cpp}}
+\doxysubsubsection{\texorpdfstring{pd()}{pd()}}
+{\footnotesize\ttfamily Vector3f pd (\begin{DoxyParamCaption}\item[{float}]{tb,  }\item[{Vector3f}]{xef,  }\item[{Vector3f}]{xe0 }\end{DoxyParamCaption})}
+
+
+
+Calculates trajectory for the end-\/effector position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The current time \\
+\hline
+{\em xef} & The desired end-\/effector position \\
+\hline
+{\em xe0} & The start end-\/effector position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3f 
+\end{DoxyReturn}
+\Hypertarget{movement_8cpp_a782005693f0b37073d6c508c052e877a}\label{movement_8cpp_a782005693f0b37073d6c508c052e877a} 
+\index{movement.cpp@{movement.cpp}!qd@{qd}}
+\index{qd@{qd}!movement.cpp@{movement.cpp}}
+\doxysubsubsection{\texorpdfstring{qd()}{qd()}}
+{\footnotesize\ttfamily Quaternionf qd (\begin{DoxyParamCaption}\item[{float}]{tb,  }\item[{Quaternionf}]{q0,  }\item[{Quaternionf}]{qf }\end{DoxyParamCaption})}
+
+
+
+Calculates trajectory for the end-\/effector orientation with quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tb} & The current time \\
+\hline
+{\em q0} & The start end-\/effector quaternion \\
+\hline
+{\em qf} & The desired end-\/effector quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quaternionf 
+\end{DoxyReturn}

@@ -1,0 +1,51 @@
+\doxysection{vision/params.py File Reference}
+\hypertarget{params_8py}{}\label{params_8py}\index{vision/params.py@{vision/params.py}}
+
+
+Parameters used in the vision scripts.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceparams}{params}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceparams_a81247845ec632a7c8c8191a51f7ffdcf}{BASE\+\_\+\+LINK\+\_\+\+POSITION}} = np.\+array(\mbox{[}0.\+5,0.\+35,1.\+75\mbox{]})
+\begin{DoxyCompactList}\small\item\em Base link position regarding to the origin frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespaceparams_aab44c08c45d12ca14d1ac7c148ce1be6}{BLOCK\+\_\+\+COORD\+\_\+Z}} = 0.\+875
+\begin{DoxyCompactList}\small\item\em Height of the block regarding to the origin frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceparams_ac9f5c95acbf6045c0acd616a643e6e3e}{CATEGORIES}} = 11
+\begin{DoxyCompactList}\small\item\em Number of categories of blocks. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_aa335fc82eec63b558cba9b6b1e8239ed}{IMAGE\+\_\+\+SUB\+\_\+\+TOPIC}} = \textquotesingle{}/ur5/zed\+\_\+node/left/image\+\_\+rect\+\_\+color\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic from where the script get the ZED image. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespaceparams_a47fc5f7d24384e2a2634923bf22a8f14}{MIN\+\_\+\+LEVEL\+\_\+\+CONFIDENCE}} = 0.\+3
+\begin{DoxyCompactList}\small\item\em Level of confidence of the Yolo model to keep the assigned labels. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_abc7c33c1e8a2bca2b98cf1c214b83ba3}{NODE\+\_\+\+NAME}} = \textquotesingle{}vision\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS nodes name. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a0d2fa0bce2b121981c166302a16c195f}{POINTCLOUD\+\_\+\+SUB\+\_\+\+TOPIC}} = \textquotesingle{}/ur5/zed\+\_\+node/point\+\_\+cloud/cloud\+\_\+registered\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic from where the script get the pointcloud. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a5992b09f0f1b706370b615e7d8cfda6b}{PUB\+\_\+\+TOPIC}} = \textquotesingle{}lego\+\_\+position\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em ROS topic where to publish positions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceparams_a704be5705ab4b971728ff03dd17e79e9}{RY}}
+\begin{DoxyCompactList}\small\item\em Rotation matrix of the ZED camera. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceparams_af707c2e89f99f7d2ba615a37f8e174a8}{TABLE}} = \mbox{[}\mbox{[}825,549\mbox{]}, \mbox{[}1301,552\mbox{]}, \mbox{[}1570,913\mbox{]}, \mbox{[}658, 921\mbox{]}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Area where the vision detect blocks. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_a389048ec3a4b0e520fdde087872b58ee}{ZED\+\_\+\+IMG\+\_\+\+CROPPED\+\_\+\+PATH}} = os.\+getcwd() + \textquotesingle{}/cropped\+\_\+zed\+\_\+image.\+png\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Path where the cropped image is saved (a mask is applied to the photo to reduce confusion) \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespaceparams_aded3eabd628f6698bc26c9166751d348}{ZED\+\_\+\+IMG\+\_\+\+PATH}} = os.\+getcwd() + \textquotesingle{}/zed\+\_\+image.\+png\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Path where the original ZED image is saved. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceparams_a17f1d9348cd4bdeffa6d89cf53ad0642}{ZED\+\_\+\+POSITION}} = np.\+array(\mbox{[}-\/0.\+9 ,0.\+24 ,-\/0.\+35\mbox{]})
+\begin{DoxyCompactList}\small\item\em Zed position regarding to the base link frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters used in the vision scripts. 
+
+\hypertarget{vision_8py_module_authors}{}\doxysubsection{\texorpdfstring{Author(s)}{Author(s)}}\label{vision_8py_module_authors}
+
+\begin{DoxyItemize}
+\item Created by Marco Morandin 
+\end{DoxyItemize}

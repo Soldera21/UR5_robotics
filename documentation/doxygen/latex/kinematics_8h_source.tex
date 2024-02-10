@@ -1,0 +1,42 @@
+\doxysection{kinematics.\+h}
+\hypertarget{kinematics_8h_source}{}\label{kinematics_8h_source}\index{planner\_pkg/include/planner\_pkg/kinematics.h@{planner\_pkg/include/planner\_pkg/kinematics.h}}
+\mbox{\hyperlink{kinematics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_\_KINEMATICS\_H\_\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_\_KINEMATICS\_H\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structframe}{frame}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Vector3f\ \mbox{\hyperlink{structframe_a6d67a1407eb2b4e07fad725179867842}{xyz}};}
+\DoxyCodeLine{00029\ \ \ \ \ Matrix3f\ \mbox{\hyperlink{structframe_af725d0508465e80a23db02eb25c321b1}{rot}};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_a89591faef25f2850f14b6a387c5c18b1}{t10f}}(\textcolor{keywordtype}{float}\ th1);}
+\DoxyCodeLine{00038\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_aa7483c5c582d6261e9c9d611f9432a55}{t21f}}(\textcolor{keywordtype}{float}\ th2);}
+\DoxyCodeLine{00039\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_aa7f1b677965cca214ef9e10888531101}{t32f}}(\textcolor{keywordtype}{float}\ th3);}
+\DoxyCodeLine{00040\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_a16b2bd1ace29503b8573fc8fe23754d8}{t43f}}(\textcolor{keywordtype}{float}\ th4);}
+\DoxyCodeLine{00041\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_a5ea95e7fb54b1a70c09843792fb0e354}{t54f}}(\textcolor{keywordtype}{float}\ th5);}
+\DoxyCodeLine{00042\ Matrix4f\ \mbox{\hyperlink{kinematics_8h_a08c3f9615fbf2fd46f875daddb2ebdd1}{t65f}}(\textcolor{keywordtype}{float}\ th6);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \mbox{\hyperlink{structframe}{frame}}\ \mbox{\hyperlink{kinematics_8h_a1c0821499cb3c4da44537f687fc3ab24}{direct\_kinematics}}(VectorXf\ th);}
+\DoxyCodeLine{00045\ MatrixXf\ \mbox{\hyperlink{kinematics_8h_a4978cfad63323ed817ed6bd32cd6ae5e}{inverse\_kinematics}}(\mbox{\hyperlink{structframe}{frame}}\ \&\mbox{\hyperlink{structframe}{frame}});}
+\DoxyCodeLine{00046\ MatrixXf\ \mbox{\hyperlink{kinematics_8h_ae425cc46373360169a94ad1bac74059e}{jacobian}}(VectorXf\ q);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ Matrix3f\ \mbox{\hyperlink{kinematics_8h_a0e82638d1d8d960a930ba993828cde39}{eul2rotm}}(Vector3f\ rpy);}
+\DoxyCodeLine{00049\ Vector3f\ \mbox{\hyperlink{kinematics_8h_a379670d842713c7f6771770447e82751}{rotm2eul}}(Matrix3f\ R);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

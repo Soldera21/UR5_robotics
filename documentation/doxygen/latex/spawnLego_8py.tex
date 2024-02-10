@@ -1,0 +1,48 @@
+\doxysection{spawn\+Lego/spawn\+Lego.py File Reference}
+\hypertarget{spawnLego_8py}{}\label{spawnLego_8py}\index{spawnLego/spawnLego.py@{spawnLego/spawnLego.py}}
+
+
+Spawn lego in random position and orientation.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacespawnLego}{spawn\+Lego}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacespawnLego_a42c32b24864d302a9c6fe0cc775411b6}{change\+Model\+Color}} (model\+\_\+xml, color)
+\begin{DoxyCompactList}\small\item\em Changes the color of model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacespawnLego_a4fa5001c829ed01a65d5e1f4722026aa}{check\+\_\+sovrapposizioni}} (pos, lego)
+\begin{DoxyCompactList}\small\item\em This function check if there is conflict in spawn with other legos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacespawnLego_a5af2c02f70efb7e97c1069b38a4b8d3f}{del\+\_\+model}} (model)
+\begin{DoxyCompactList}\small\item\em Removes the model with \textquotesingle{}model\+Name\textquotesingle{} from the Gazebo scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacespawnLego_a0002f108380a6946dce210a833965d6d}{rand\+Num}} (min, max)
+\begin{DoxyCompactList}\small\item\em Generates a random number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacespawnLego_a50e65793e515731da5e2da292d238c58}{random\+\_\+position}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random position and rotation in the spawning zone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacespawnLego_accff7cea4f0a1360e94b4feaa5e47c66}{spawn\+\_\+model}} (model, pos, name=None, ref\+\_\+frame=\textquotesingle{}world\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Spawns the model in the given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacespawnLego_a07b6a46c424e09fe376f3ffc65503c50}{color\+List}} = \mbox{[}\textquotesingle{}Gazebo/Indigo\textquotesingle{}, \textquotesingle{}Gazebo/Gold\textquotesingle{}, \textquotesingle{}Gazebo/Orange\textquotesingle{},\textquotesingle{}Gazebo/Red\textquotesingle{}, \textquotesingle{}Gazebo/Purple\textquotesingle{}, \textquotesingle{}Gazebo/Grass\textquotesingle{},\textquotesingle{}Gazebo/White\textquotesingle{}, \textquotesingle{}Gazebo/Green\textquotesingle{}, \textquotesingle{}Gazebo/Yellow\textquotesingle{}, \textquotesingle{}Gazebo/Blue\textquotesingle{}, \textquotesingle{}Gazebo/Turquoise\textquotesingle{}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Colors of the generated legos. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespacespawnLego_a430c79103cca9e4750ea8a87897de6e0}{models}} = \mbox{[}"{}X1-\/Y1-\/Z2"{}, "{}X1-\/Y2-\/Z1"{}, "{}X1-\/Y2-\/Z2-\/CHAMFER"{}, "{}X1-\/Y2-\/Z2-\/TWINFILLET"{}, "{}X1-\/Y2-\/Z2"{}, "{}X1-\/Y3-\/Z2"{}, "{}X1-\/Y4-\/Z1"{}, "{}X1-\/Y4-\/Z2"{}, "{}X2-\/Y2-\/Z2-\/FILLET"{}, "{}X2-\/Y2-\/Z2"{}, "{}X1-\/Y3-\/Z2-\/FILLET"{}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Name of the models. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacespawnLego_ab1031d298d5582ed38a1281e3a57b2cf}{models\+\_\+path}} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+)) + "{}/models"{}
+\begin{DoxyCompactList}\small\item\em Path of the models to add to the scene. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacespawnLego_ac9ed7caf0d2934550a90a6ae4b9c6d01}{toll}} = 0.\+039
+\begin{DoxyCompactList}\small\item\em Spacing factor for placing pieces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Spawn lego in random position and orientation. 
+
+\hypertarget{vision_8py_module_authors}{}\doxysubsection{\texorpdfstring{Author(s)}{Author(s)}}\label{vision_8py_module_authors}
+
+\begin{DoxyItemize}
+\item Created by Marco Soldera 
+\end{DoxyItemize}

@@ -1,0 +1,72 @@
+\doxysection{utils/dataset\+\_\+creation/yolo-\/k-\/fold-\/splitter.py File Reference}
+\hypertarget{yolo-k-fold-splitter_8py}{}\label{yolo-k-fold-splitter_8py}\index{utils/dataset\_creation/yolo-\/k-\/fold-\/splitter.py@{utils/dataset\_creation/yolo-\/k-\/fold-\/splitter.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceyolo-k-fold-splitter}{yolo-\/k-\/fold-\/splitter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_afa21e54caecd903908de72d7ac74830e}{classes}} = yaml.\+safe\+\_\+load(y)\mbox{[}\textquotesingle{}names\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_abbf4e4405a37de00246a5b4611a50b17}{cls\+\_\+idx}} = sorted(range(0, len(\mbox{\hyperlink{namespaceyolo-k-fold-splitter_afa21e54caecd903908de72d7ac74830e}{classes}})))
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab086d9972a53a8edbeb3f94f3c23ca24}{dataset\+\_\+path}} = Path(\textquotesingle{}./yolo\+\_\+dataset\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a5de7cc8f8116b4a881c69483921d4176}{dataset\+\_\+yaml}} = \mbox{\hyperlink{namespaceyolo-k-fold-splitter_aed288cd2ba39f180793944e141c87172}{split\+\_\+dir}} / f\textquotesingle{}\{split\}\+\_\+dataset.\+yaml\textquotesingle{}
+\item 
+list \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a71d13b176b55fedfabf47c89d017713c}{ds\+\_\+yamls}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab1000d1f2ea9878f60bc119650013894}{encoding}}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a0dd30d2c854453a5a754e2a81c971651}{exist\+\_\+ok}}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a1f08504ceef42549c507f58024be5c95}{fold\+\_\+lbl\+\_\+distrb}} = pd.\+Data\+Frame(index=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a2139f9b3e08b53c55300d501fdc7f22f}{folds}}, columns=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_abbf4e4405a37de00246a5b4611a50b17}{cls\+\_\+idx}})
+\item 
+list \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a2139f9b3e08b53c55300d501fdc7f22f}{folds}} = \mbox{[}f\textquotesingle{}split\+\_\+\{n\}\textquotesingle{} for n in range(1, \mbox{\hyperlink{namespaceyolo-k-fold-splitter_aa1edd46b183a72ae2659d958dfbb7fe2}{ksplit}} + 1)\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a7dda183ff819a866a30d91339d901c94}{folds\+\_\+df}} = pd.\+Data\+Frame(index=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab13985ad4923e9584bee761a5f0c74d0}{indx}}, columns=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a2139f9b3e08b53c55300d501fdc7f22f}{folds}})
+\item 
+list \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a09fdf86df724fb528e53a740e45fb686}{images}} = \mbox{[}$\,$\mbox{]}
+\item 
+str \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a94a2784d82fb86e907ea353fa8446ed7}{img\+\_\+to\+\_\+path}} = \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a788a614a216ded88fb318d5fb2cd1a1d}{save\+\_\+path}} / split / k\+\_\+split / \textquotesingle{}\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a09fdf86df724fb528e53a740e45fb686}{images}}\textquotesingle{}
+\item 
+list \mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab13985ad4923e9584bee761a5f0c74d0}{indx}} = \mbox{[}l.\+stem for l in \mbox{\hyperlink{namespaceyolo-k-fold-splitter_abc325fc13d4194905c1786e24ee447f0}{labels}}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a20b0df7ddca3f71a7d51c51246303637}{kf}} = KFold(n\+\_\+splits=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_aa1edd46b183a72ae2659d958dfbb7fe2}{ksplit}}, shuffle=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a643a20c0c59588a0f741a6095e2025fd}{True}}, random\+\_\+state=20)
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a42bd5f445e73382680e755e565c043bc}{kfolds}} = list(kf.\+split(\mbox{\hyperlink{namespaceyolo-k-fold-splitter_afd9039878ef7ea45c44a9f5c51cdaaa3}{labels\+\_\+df}}))
+\item 
+int \mbox{\hyperlink{namespaceyolo-k-fold-splitter_aa1edd46b183a72ae2659d958dfbb7fe2}{ksplit}} = 5
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_abc325fc13d4194905c1786e24ee447f0}{labels}} = sorted(dataset\+\_\+path.\+rglob("{}\texorpdfstring{$\ast$}{*}labels/\texorpdfstring{$\ast$}{*}.txt"{}))
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_afd9039878ef7ea45c44a9f5c51cdaaa3}{labels\+\_\+df}} = pd.\+Data\+Frame(\mbox{[}$\,$\mbox{]}, columns=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_abbf4e4405a37de00246a5b4611a50b17}{cls\+\_\+idx}}, index=\mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab13985ad4923e9584bee761a5f0c74d0}{indx}})
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_addd956fee8ab81fad26414b8bf05a5cf}{lbl\+\_\+counter}} = Counter()
+\item 
+str \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a564ac256ac4821de9b8559ab894b87a2}{lbl\+\_\+to\+\_\+path}} = \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a788a614a216ded88fb318d5fb2cd1a1d}{save\+\_\+path}} / split / k\+\_\+split / \textquotesingle{}\mbox{\hyperlink{namespaceyolo-k-fold-splitter_abc325fc13d4194905c1786e24ee447f0}{labels}}\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a22ea78f101680108434cb132f12afa0a}{lines}} = lf.\+readlines()
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_acb6c1e7263db3bfb5739c8e7b04448cd}{parents}}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a33e97a0953b4f4a9f1b61cd9556e2350}{ratio}} = \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a70c2093c4504a1c48bdfdb4d6bf5cea4}{val\+\_\+totals}} / (\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a78bb242c775b2b58d17ec85777a556f9}{train\+\_\+totals}} + 1E-\/7)
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a788a614a216ded88fb318d5fb2cd1a1d}{save\+\_\+path}} = Path(\mbox{\hyperlink{namespaceyolo-k-fold-splitter_ab086d9972a53a8edbeb3f94f3c23ca24}{dataset\+\_\+path}} / f\textquotesingle{}split\+\_\+\{\mbox{\hyperlink{namespaceyolo-k-fold-splitter_aa1edd46b183a72ae2659d958dfbb7fe2}{ksplit}}\}\+\_\+\{\mbox{\hyperlink{namespaceyolo-k-fold-splitter_aa1edd46b183a72ae2659d958dfbb7fe2}{ksplit}}\}-\/Fold\+\_\+\+Cross-\/val\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_aed288cd2ba39f180793944e141c87172}{split\+\_\+dir}} = \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a788a614a216ded88fb318d5fb2cd1a1d}{save\+\_\+path}} / split
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a550769bbd4e7537ff90a656f5b0c23b2}{start}}
+\item 
+list \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a797055217263b4960ac398afbf9531c1}{supported\+\_\+extensions}} = \mbox{[}\textquotesingle{}.jpg\textquotesingle{}, \textquotesingle{}.jpeg\textquotesingle{}, \textquotesingle{}.png\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a78bb242c775b2b58d17ec85777a556f9}{train\+\_\+totals}} = labels\+\_\+df.\+iloc\mbox{[}train\+\_\+indices\mbox{]}.sum()
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a643a20c0c59588a0f741a6095e2025fd}{True}}
+\item 
+\mbox{\hyperlink{namespaceyolo-k-fold-splitter_a70c2093c4504a1c48bdfdb4d6bf5cea4}{val\+\_\+totals}} = labels\+\_\+df.\+iloc\mbox{[}val\+\_\+indices\mbox{]}.sum()
+\item 
+str \mbox{\hyperlink{namespaceyolo-k-fold-splitter_a36420abe94b8f8229b4a1f33a894ed23}{yaml\+\_\+file}} = \textquotesingle{}./yolo\+\_\+dataset/data.\+yaml\textquotesingle{}
+\end{DoxyCompactItemize}
