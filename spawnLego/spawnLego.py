@@ -176,10 +176,12 @@ if __name__ == "__main__":
 	print()
 
 	while len(spawned_lego) < len(models):
+		##\cond 
 		cont = 0
 		spawned_lego = []
 		errors = 0
 		i = 0
+		##\endcond
 
 		print("Removing models:")
 		for m in models:
@@ -192,7 +194,9 @@ if __name__ == "__main__":
 		for lego in models:
 			while errors < 500:
 				print(lego + ":")
+				##\cond 
 				pos = random_position()
+				##\endcond 
 				print(pos)
 				if not check_sovrapposizioni(pos, lego):
 					print(str(spawn_model(lego, pos)) + "\n\n")
